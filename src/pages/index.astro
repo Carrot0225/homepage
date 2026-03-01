@@ -43,7 +43,7 @@ import '../styles/home.css';
     </header>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="about-section reveal">
       <div class="section-container">
         <div class="section-header">
           <span class="section-label">About</span>
@@ -58,7 +58,7 @@ import '../styles/home.css';
     </section>
 
     <!-- YouTube Section -->
-    <section class="videos-section-modern">
+    <section class="videos-section-modern reveal">
       <div class="section-container">
         <div class="section-header">
           <span class="section-label">YouTube</span>
@@ -84,7 +84,7 @@ import '../styles/home.css';
     </section>
 
     <!-- Activities Section -->
-    <section class="activities-section">
+    <section class="activities-section reveal">
       <div class="section-container">
         <div class="section-header">
           <span class="section-label">Activities</span>
@@ -111,7 +111,7 @@ import '../styles/home.css';
     </section>
 
     <!-- Platforms Section -->
-    <section class="platforms-section">
+    <section class="platforms-section reveal">
       <div class="section-container">
         <div class="section-header">
           <span class="section-label">Platforms</span>
@@ -127,7 +127,7 @@ import '../styles/home.css';
     </section>
 
     <!-- Links Section -->
-    <section class="links-section-modern">
+    <section class="links-section-modern reveal">
       <div class="section-container">
         <div class="section-header">
           <span class="section-label">Connect</span>
@@ -184,6 +184,17 @@ import '../styles/home.css';
       heroBackground.style.transform = `translateY(${window.scrollY * 0.5}px)`;
     });
   }
+
+  // Scroll Reveal with Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // Music notes animation
   function createMusicNotes() {

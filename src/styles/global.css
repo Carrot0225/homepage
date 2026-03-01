@@ -13,14 +13,29 @@ html {
 :root {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   --font-heading: 'Outfit', sans-serif;
+  --font-accent: 'Zen Kurenaido', sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.92);
-  background-color: #050505;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Warm Dark Palette */
+  --color-bg: #0d0a07;
+  --color-bg-alt: #12100d;
+  --color-bg-alt2: #0f0d0a;
+  --color-bg-alt3: #080604;
+  --color-accent: #ff8c42;
+  --color-accent2: #ff6b35;
+  --color-warm: #d4a574;
+  --color-cream: #f5e6d0;
+  --color-text: #f5f5f7;
+  --color-text-muted: #b0a89e;
+  --color-border: rgba(255, 180, 100, 0.08);
+
+  background-color: var(--color-bg);
 }
 
 body {
@@ -29,11 +44,36 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Grain Texture Overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
 }
 
 ::selection {
   background: rgba(255, 140, 66, 0.3);
   color: #fff;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Custom Scrollbar */
@@ -42,15 +82,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: var(--color-bg-alt2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #4a3f35;
   border-radius: 5px;
-  border: 2px solid #0a0a0a;
+  border: 2px solid var(--color-bg-alt2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #6b5d4f;
 }

@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="schedule-info">
       <div class="info-container">
-        <div class="schedule-grid">
+        <div class="schedule-grid reveal">
           <div class="schedule-card">
             <div class="day-label">平日</div>
             <div class="time-slots">
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="schedule-notice">
+        <div class="schedule-notice reveal">
           <p class="notice-text">
             詳細はXでつぶやいてます！
           </p>
@@ -60,11 +60,23 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </Layout>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 <style>
   .schedule-page {
     min-height: 100vh;
-    background: #000;
-    color: #f5f5f7;
+    background: var(--color-bg);
+    color: var(--color-text);
   }
 
   .schedule-hero {
@@ -72,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(ellipse at 50% 50%, #1a1a1a 0%, #000 100%);
+    background: radial-gradient(ellipse at 50% 50%, #1a1510 0%, var(--color-bg) 100%);
     position: relative;
     overflow: hidden;
   }
@@ -120,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -130,13 +142,13 @@ import Layout from '../layouts/Layout.astro';
   .schedule-subtitle {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 300;
-    color: #a1a1a6;
+    color: var(--color-text-muted);
     letter-spacing: 0.05em;
   }
 
   .schedule-info {
     padding: 4rem 2rem;
-    background: #0a0a0a;
+    background: var(--color-bg-alt2);
   }
 
   .info-container {
@@ -151,14 +163,19 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 4rem;
   }
 
+  /* Puffy Schedule Card */
   .schedule-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 180, 100, 0.03);
+    border: 1px solid var(--color-border);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow:
+      0 4px 0 rgba(13, 10, 7, 0.5),
+      0 8px 25px rgba(0, 0, 0, 0.3),
+      inset 0 1px 2px rgba(255, 255, 255, 0.03);
   }
 
   .schedule-card::before {
@@ -176,7 +193,10 @@ import Layout from '../layouts/Layout.astro';
   .schedule-card:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 140, 66, 0.3);
-    box-shadow: 0 10px 40px rgba(255, 140, 66, 0.2);
+    box-shadow:
+      0 8px 0 rgba(13, 10, 7, 0.3),
+      0 16px 40px rgba(255, 140, 66, 0.15),
+      inset 0 1px 2px rgba(255, 255, 255, 0.05);
   }
 
   .schedule-card:hover::before {
@@ -186,7 +206,7 @@ import Layout from '../layouts/Layout.astro';
   .day-label {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #ff8c42;
+    color: var(--color-accent);
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
@@ -206,9 +226,9 @@ import Layout from '../layouts/Layout.astro';
     flex-direction: column;
     gap: 0.5rem;
     padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 180, 100, 0.02);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
     transition: all 0.3s ease;
   }
 
@@ -225,55 +245,70 @@ import Layout from '../layouts/Layout.astro';
 
   .slot-label {
     font-size: 1rem;
-    color: #a1a1a6;
+    color: var(--color-text-muted);
     font-weight: 500;
   }
 
   .slot-time {
     font-size: 1.5rem;
-    color: #f5f5f7;
+    color: var(--color-text);
     font-weight: 600;
   }
 
   .slot-note {
     font-size: 1.25rem;
-    color: #a1a1a6;
+    color: var(--color-text-muted);
     text-align: center;
   }
 
   .schedule-notice {
     text-align: center;
     padding: 3rem 2rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 180, 100, 0.02);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-border);
   }
 
   .notice-text {
     font-size: 1.5rem;
-    color: #f5f5f7;
+    color: var(--color-text);
     margin-bottom: 2rem;
     font-weight: 600;
   }
 
+  /* Puffy X Button */
   .x-button {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
     padding: 1.25rem 2.5rem;
-    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent2) 100%);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 140, 66, 0.3);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow:
+      0 4px 0 #cc5a1a,
+      0 8px 20px rgba(255, 140, 66, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.15);
   }
 
   .x-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 140, 66, 0.5);
+    box-shadow:
+      0 6px 0 #cc5a1a,
+      0 12px 30px rgba(255, 140, 66, 0.5),
+      inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  }
+
+  .x-button:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 1px 0 #cc5a1a,
+      0 4px 10px rgba(255, 140, 66, 0.2),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
   }
 
   .x-icon {

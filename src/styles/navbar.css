@@ -4,10 +4,10 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(5, 5, 5, 0.7);
+  background: rgba(13, 10, 7, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #f5f5f7;
+  color: var(--color-text);
   font-size: 1.25rem;
   font-weight: 700;
   font-family: var(--font-heading);
@@ -60,7 +60,7 @@
 .hamburger span {
   width: 24px;
   height: 2px;
-  background: #f5f5f7;
+  background: var(--color-text);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   border-radius: 2px;
 }
@@ -86,7 +86,7 @@
 
 .nav-link {
   position: relative;
-  color: #a1a1a6;
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -102,14 +102,18 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #ff8c42, #ff6b35);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent2));
   transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   border-radius: 2px;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #f5f5f7;
+  color: var(--color-text);
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
 }
 
 .nav-link.active::after {
@@ -140,14 +144,14 @@
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(13, 10, 7, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 2rem;
     transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid var(--color-border);
   }
 
   .nav-menu.active {
@@ -166,7 +170,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(8, 6, 4, 0.7);
     z-index: 999;
     animation: fadeIn 0.3s ease;
   }

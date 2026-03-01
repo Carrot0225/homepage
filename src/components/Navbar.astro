@@ -20,6 +20,7 @@ const currentPath = Astro.url.pathname;
     <div class="nav-menu">
       <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>HOME</a>
       <a href="/schedule" class={`nav-link ${currentPath === '/schedule' || currentPath === '/schedule/' ? 'active' : ''}`}>配信スケジュール</a>
+      <a href="/mix" class={`nav-link ${currentPath === '/mix' || currentPath === '/mix/' ? 'active' : ''}`}>MIXについて</a>
       <a href="/gacha" class={`nav-link ${currentPath === '/gacha' || currentPath === '/gacha/' ? 'active' : ''}`}>歌ガチャ</a>
     </div>
   </div>

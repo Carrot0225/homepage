@@ -1,11 +1,262 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/home.css';
 ---
 
 <Layout>
-	<Welcome />
+  <div class="home">
+    <!-- Hero Section with Profile Icon -->
+    <header class="hero-section">
+      <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text-content">
+          <h1 class="hero-title">きゃる</h1>
+          <p class="hero-subtitle">歌い手 × 歌ってみたMIX</p>
+          <p class="hero-tagline">音楽で繋がる、心に響く歌声を</p>
+          <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="hero-cta">
+            <span>Contact Me</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="profile-icon-wrapper">
+          <img
+            src="/photos/きゃるメインアイコン.png"
+            alt="きゃる プロフィール"
+            class="profile-icon"
+            role="button"
+            tabindex="0"
+          />
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">About</span>
+          <h2 class="section-title">音楽への想い</h2>
+        </div>
+        <p class="about-text">
+          歌い手として活動している、きゃる🥕👑です。
+          YouTubeでの歌ってみた動画投稿や、ColorSing、Topiaなどの配信プラットフォームで活動しています。
+          また、歌ってみたのセルフミックスも行っています。少しずつ依頼もいただいております。MIX依頼についてはMIXについてのページをご覧ください。
+        </p>
+      </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="videos-section-modern">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">YouTube</span>
+          <h2 class="section-title">YouTube</h2>
+        </div>
+        <div class="video-container-modern">
+          <iframe
+            src="https://www.youtube.com/embed/oUo-AYvWA0Y?si=97sgSv4IrGDtvBri"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer" class="link-button">
+          YouTubeチャンネルを見る
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Activities</span>
+          <h2 class="section-title">活動内容</h2>
+        </div>
+        <div class="activities-grid">
+          <div class="activity-card">
+            <div class="activity-icon">🎤</div>
+            <h3>歌ってみた</h3>
+            <p>様々な楽曲をカバーし、YouTubeやSNSで発信しています。</p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-icon">🎵</div>
+            <h3>配信活動</h3>
+            <p>ColorSing、Topiaなどの配信プラットフォームで歌配信を行っています。</p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-icon">🎧</div>
+            <h3>MIX制作</h3>
+            <p>歌ってみた動画の音源MIX・マスタリングを承っています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="platforms-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Platforms</span>
+          <h2 class="section-title">活動プラットフォーム</h2>
+        </div>
+        <div class="platforms-list">
+          <span class="platform-badge">YouTube</span>
+          <span class="platform-badge">ColorSing</span>
+          <span class="platform-badge">Topia</span>
+          <span class="platform-badge">X (Twitter)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section-modern">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Connect</span>
+          <h2 class="section-title">SNS & Links</h2>
+        </div>
+        <div class="social-grid">
+          <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="social-card">
+            <span class="social-icon">𝕏</span>
+            <span class="social-name">X (Twitter)</span>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer" class="social-card">
+            <span class="social-icon">▶️</span>
+            <span class="social-name">YouTube</span>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="https://web.colorsing.com/share/live?live_id=2d0a51ab-7078-4853-9864-5078fbb9ebab" target="_blank" rel="noopener noreferrer" class="social-card">
+            <span class="social-icon">🎵</span>
+            <span class="social-name">ColorSing</span>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="#" class="social-card">
+            <span class="social-icon">🌐</span>
+            <span class="social-name">Topia</span>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<script>
+  // Mouse tracking for gradient orbs
+  window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    document.documentElement.style.setProperty('--mouse-x', x.toString());
+    document.documentElement.style.setProperty('--mouse-y', y.toString());
+  });
+
+  // Parallax scroll
+  const heroBackground = document.querySelector('.hero-background') as HTMLElement | null;
+  if (heroBackground) {
+    window.addEventListener('scroll', () => {
+      heroBackground.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+    });
+  }
+
+  // Music notes animation
+  function createMusicNotes() {
+    const notes = ['♪', '♫', '♬', '♩', '♭', '♯'];
+    const numberOfNotes = 15;
+
+    for (let i = 0; i < numberOfNotes; i++) {
+      setTimeout(() => {
+        const note = document.createElement('div');
+        note.className = 'music-note';
+        note.textContent = notes[Math.floor(Math.random() * notes.length)];
+
+        const randomX = Math.random() * window.innerWidth;
+        note.style.left = `${randomX}px`;
+        note.style.top = '0px';
+
+        const duration = 2 + Math.random() * 2;
+        note.style.animationDuration = `${duration}s`;
+
+        const hue = 20 + Math.random() * 20;
+        note.style.color = `hsl(${hue}, 100%, 60%)`;
+
+        document.body.appendChild(note);
+
+        setTimeout(() => {
+          note.remove();
+        }, duration * 1000);
+      }, i * 100);
+    }
+  }
+
+  // Profile click handler
+  let isHandling = false;
+  async function handleProfileClick(e: Event) {
+    if (isHandling) return;
+    isHandling = true;
+    setTimeout(() => { isHandling = false; }, 300);
+
+    createMusicNotes();
+
+    try {
+      const response = await fetch('/message.txt');
+      const message = await response.text();
+
+      if (message.trim()) {
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        bubble.textContent = message.trim();
+
+        const iconElement = e.currentTarget as HTMLElement;
+        const iconRect = iconElement.getBoundingClientRect();
+
+        bubble.style.top = `${iconRect.top - 20}px`;
+        bubble.style.left = `${iconRect.left + iconRect.width / 2}px`;
+
+        document.body.appendChild(bubble);
+
+        setTimeout(() => {
+          bubble.classList.add('fade-out');
+          setTimeout(() => {
+            bubble.remove();
+          }, 500);
+        }, 5000);
+      }
+    } catch (error) {
+      console.log('メッセージファイルが見つかりませんでした');
+    }
+  }
+
+  const profileIcon = document.querySelector('.profile-icon');
+  profileIcon?.addEventListener('click', handleProfileClick);
+  profileIcon?.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    handleProfileClick(e);
+  });
+</script>

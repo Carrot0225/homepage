@@ -1,0 +1,50 @@
+---
+import '../styles/navbar.css';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">
+      <img src="/photos/きゃるメインアイコン.png" alt="きゃる" class="logo-icon" />
+      <span>きゃる</span>
+    </a>
+
+    <button class="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu">
+      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>HOME</a>
+      <a href="/schedule" class={`nav-link ${currentPath === '/schedule' || currentPath === '/schedule/' ? 'active' : ''}`}>配信スケジュール</a>
+      <a href="/gacha" class={`nav-link ${currentPath === '/gacha' || currentPath === '/gacha/' ? 'active' : ''}`}>歌ガチャ</a>
+    </div>
+  </div>
+
+  <div class="nav-overlay"></div>
+</nav>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const overlay = document.querySelector('.nav-overlay');
+
+  function closeMenu() {
+    hamburger?.classList.remove('active');
+    navMenu?.classList.remove('active');
+    overlay?.classList.remove('active');
+  }
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu?.classList.toggle('active');
+    overlay?.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => link.addEventListener('click', closeMenu));
+  overlay?.addEventListener('click', closeMenu);
+</script>

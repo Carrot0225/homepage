@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="modern-footer">
+  <p>&copy; {year} きゃる🥕👑. All rights reserved.</p>
+</footer>
+
+<style>
+  .modern-footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #6e6e73;
+    font-size: 0.875rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modern-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 66, 0.5), transparent);
+  }
+
+  @media (max-width: 480px) {
+    .modern-footer {
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>

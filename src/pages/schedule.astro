@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="配信スケジュール | きゃるのページ">
+  <div class="schedule-page">
+    <div class="schedule-hero">
+      <div class="schedule-content">
+        <h1 class="schedule-title">配信スケジュール</h1>
+        <p class="schedule-subtitle">Live Schedule</p>
+      </div>
+    </div>
+
+    <div class="schedule-info">
+      <div class="info-container">
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <div class="day-label">平日</div>
+            <div class="time-slots">
+              <div class="time-slot">
+                <span class="slot-label">朝枠</span>
+                <span class="slot-time">7:00 ~ 7:50</span>
+              </div>
+              <div class="time-slot">
+                <span class="slot-label">夜枠</span>
+                <span class="slot-time">20:00 ~ 23:00 (目安)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule-card">
+            <div class="day-label">土日祝</div>
+            <div class="time-slots">
+              <div class="time-slot flexible">
+                <span class="slot-note">日によって異なります。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-notice">
+          <p class="notice-text">
+            詳細はXでつぶやいてます！
+          </p>
+          <a
+            href="https://x.com/carrot_tpa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="x-button"
+          >
+            <span class="x-icon">𝕏</span>
+            <span>Xをチェック</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .schedule-page {
+    min-height: 100vh;
+    background: #000;
+    color: #f5f5f7;
+  }
+
+  .schedule-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 50% 50%, #1a1a1a 0%, #000 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .schedule-hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(30px, -30px);
+    }
+  }
+
+  .schedule-content {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .schedule-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #ff8c42 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+  }
+
+  .schedule-subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #a1a1a6;
+    letter-spacing: 0.05em;
+  }
+
+  .schedule-info {
+    padding: 4rem 2rem;
+    background: #0a0a0a;
+  }
+
+  .info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .schedule-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .schedule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .schedule-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 140, 66, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 140, 66, 0.2);
+  }
+
+  .schedule-card:hover::before {
+    opacity: 1;
+  }
+
+  .day-label {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ff8c42;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .time-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .time-slot:hover {
+    background: rgba(255, 140, 66, 0.05);
+    border-color: rgba(255, 140, 66, 0.2);
+  }
+
+  .time-slot.flexible {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.25rem;
+  }
+
+  .slot-label {
+    font-size: 1rem;
+    color: #a1a1a6;
+    font-weight: 500;
+  }
+
+  .slot-time {
+    font-size: 1.5rem;
+    color: #f5f5f7;
+    font-weight: 600;
+  }
+
+  .slot-note {
+    font-size: 1.25rem;
+    color: #a1a1a6;
+    text-align: center;
+  }
+
+  .schedule-notice {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .notice-text {
+    font-size: 1.5rem;
+    color: #f5f5f7;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .x-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem;
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 140, 66, 0.3);
+  }
+
+  .x-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 140, 66, 0.5);
+  }
+
+  .x-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .schedule-hero {
+      min-height: 40vh;
+    }
+
+    .schedule-content {
+      padding: 1.5rem;
+    }
+
+    .schedule-title {
+      font-size: 2.5rem;
+    }
+
+    .schedule-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .schedule-info {
+      padding: 3rem 1.5rem;
+    }
+
+    .schedule-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .schedule-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .day-label {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .slot-time {
+      font-size: 1.25rem;
+    }
+
+    .slot-note {
+      font-size: 1.1rem;
+    }
+
+    .notice-text {
+      font-size: 1.25rem;
+    }
+
+    .x-button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-title {
+      font-size: 2rem;
+    }
+
+    .schedule-subtitle {
+      font-size: 1.25rem;
+    }
+
+    .schedule-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .day-label {
+      font-size: 1.3rem;
+    }
+
+    .slot-label {
+      font-size: 0.9rem;
+    }
+
+    .slot-time {
+      font-size: 1.1rem;
+    }
+
+    .slot-note {
+      font-size: 1rem;
+    }
+
+    .notice-text {
+      font-size: 1.1rem;
+    }
+
+    .x-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+</style>

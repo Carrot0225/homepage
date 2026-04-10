@@ -28,11 +28,12 @@ import '../styles/home.css';
 
         <div class="profile-icon-wrapper">
           <img
-            src="/photos/きゃるメインアイコン.png"
+            src="/photos/profile-main.png"
             alt="きゃる プロフィール"
             class="profile-icon"
             role="button"
             tabindex="0"
+            aria-label="プロフィールアイコン — クリックでメッセージ表示"
           />
         </div>
       </div>
@@ -67,8 +68,9 @@ import '../styles/home.css';
         <div class="video-container-modern">
           <iframe
             src="https://www.youtube.com/embed/oUo-AYvWA0Y?si=97sgSv4IrGDtvBri"
-            title="YouTube video player"
+            title="きゃる 歌ってみた動画"
             frameborder="0"
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -155,13 +157,10 @@ import '../styles/home.css';
               <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
           </a>
-          <a href="#" class="social-card">
+          <div class="social-card social-card--no-link">
             <span class="social-icon">🌐</span>
             <span class="social-name">Topia</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -185,16 +184,8 @@ import '../styles/home.css';
     });
   }
 
-  // Scroll Reveal with Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Scroll Reveal — shared module
+  import('../scripts/reveal.ts');
 
   // Music notes animation
   function createMusicNotes() {
@@ -266,6 +257,12 @@ import '../styles/home.css';
 
   const profileIcon = document.querySelector('.profile-icon');
   profileIcon?.addEventListener('click', handleProfileClick);
+  profileIcon?.addEventListener('keydown', (e) => {
+    if (e instanceof KeyboardEvent && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      handleProfileClick(e);
+    }
+  });
   profileIcon?.addEventListener('touchend', (e) => {
     e.preventDefault();
     handleProfileClick(e);

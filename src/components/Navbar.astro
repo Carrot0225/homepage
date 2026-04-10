@@ -2,27 +2,28 @@
 import '../styles/navbar.css';
 
 const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path || currentPath === path + '/';
 ---
 
 <nav class="navbar">
   <div class="navbar-container">
     <a href="/" class="navbar-logo">
-      <img src="/photos/きゃるメインアイコン.png" alt="きゃる" class="logo-icon" />
+      <img src="/photos/profile-main.png" alt="きゃる" class="logo-icon" />
       <span>きゃる</span>
     </a>
 
-    <button class="hamburger" aria-label="メニュー">
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <div class="nav-menu">
-      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>HOME</a>
-      <a href="/schedule" class={`nav-link ${currentPath === '/schedule' || currentPath === '/schedule/' ? 'active' : ''}`}>配信スケジュール</a>
-      <a href="/mix" class={`nav-link ${currentPath === '/mix' || currentPath === '/mix/' ? 'active' : ''}`}>MIXについて</a>
-      <a href="/gacha" class={`nav-link ${currentPath === '/gacha' || currentPath === '/gacha/' ? 'active' : ''}`}>歌ガチャ</a>
-      <a href="/colorsing" class={`nav-link ${currentPath === '/colorsing' || currentPath === '/colorsing/' ? 'active' : ''}`}>ColorSingガイド</a>
+    <div class="nav-menu" id="nav-menu" role="navigation">
+      <a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>HOME</a>
+      <a href="/schedule" class={`nav-link ${isActive('/schedule') ? 'active' : ''}`}>配信スケジュール</a>
+      <a href="/mix" class={`nav-link ${isActive('/mix') ? 'active' : ''}`}>MIXについて</a>
+      <a href="/gacha" class={`nav-link ${isActive('/gacha') ? 'active' : ''}`}>歌ガチャ</a>
+      <a href="/colorsing" class={`nav-link ${isActive('/colorsing') ? 'active' : ''}`}>ColorSingガイド</a>
     </div>
   </div>
 
@@ -30,21 +31,44 @@ const currentPath = Astro.url.pathname;
 </nav>
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
+  const hamburger = document.querySelector('.hamburger') as HTMLButtonElement | null;
+  const navMenu = document.querySelector('.nav-menu') as HTMLElement | null;
   const navLinks = document.querySelectorAll('.nav-link');
   const overlay = document.querySelector('.nav-overlay');
 
+  function openMenu() {
+    hamburger?.classList.add('active');
+    hamburger?.setAttribute('aria-expanded', 'true');
+    hamburger?.setAttribute('aria-label', 'メニューを閉じる');
+    navMenu?.classList.add('active');
+    overlay?.classList.add('active');
+    // Focus first link
+    (navLinks[0] as HTMLElement)?.focus();
+  }
+
   function closeMenu() {
     hamburger?.classList.remove('active');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    hamburger?.setAttribute('aria-label', 'メニューを開く');
     navMenu?.classList.remove('active');
     overlay?.classList.remove('active');
   }
 
   hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu?.classList.toggle('active');
-    overlay?.classList.toggle('active');
+    const isOpen = hamburger.classList.contains('active');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+      closeMenu();
+      hamburger?.focus();
+    }
   });
 
   navLinks.forEach(link => link.addEventListener('click', closeMenu));

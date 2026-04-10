@@ -64,7 +64,7 @@ body::after {
   color: #fff;
 }
 
-/* Scroll Reveal */
+/* Scroll Reveal — JS-enhanced only */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -74,6 +74,14 @@ body::after {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Fallback: show content when JS is disabled */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Custom Scrollbar */

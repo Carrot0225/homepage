@@ -22,7 +22,8 @@ import Layout from '../layouts/Layout.astro';
           <h2 class="mix-section-title">サービス概要</h2>
           <div class="service-card">
             <p class="service-description">
-              自身も歌い手として活動する出品者が、<strong>歌心を活かした歌ってみたのボーカルMIX</strong>を提供するサービスです。
+              歌い手だからこそできる、<strong>"歌心"を活かしたMIX</strong>をお届けします。
+              幼少期からの音楽経験と、自身も歌い手として活動する耳で、あなたの歌声の魅力を最大限に引き出します。
             </p>
             <div class="service-details">
               <div class="detail-item">
@@ -43,7 +44,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="detail-icon">🎤</span>
                 <div>
                   <h3>自然なピッチ補正</h3>
-                  <p>「直しました感」がなく、歌の表現やニュアンスを損なわない仕上がりにこだわっています</p>
+                  <p>機械的に音程を合わせるのではなく、歌の表現やニュアンスを理解した上で補正するため、あなたらしさを残した自然な仕上がりになります</p>
                 </div>
               </div>
             </div>
@@ -59,9 +60,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="pricing-header">
               <span class="pricing-label">基本プラン</span>
               <div class="pricing-amount">
-                <span class="yen">¥</span><span class="price">5,000</span>
+                <span class="yen">¥</span><span class="price">7,000</span>
               </div>
-              <span class="pricing-note">4分以内の楽曲</span>
+              <span class="pricing-note">4分30秒以内の楽曲</span>
             </div>
             <ul class="pricing-features">
               <li>MIX＆マスタリング（1曲）</li>
@@ -79,14 +80,14 @@ import Layout from '../layouts/Layout.astro';
               <p class="option-price">1パートにつき <strong>+¥1,000</strong></p>
             </div>
             <div class="option-card">
-              <h3>4分を超える楽曲</h3>
-              <p class="option-price">1分ごとに <strong>+¥1,000</strong></p>
-              <p class="option-example">例：+1分で¥1,000、+2分で¥2,000</p>
+              <h3>4分30秒を超える楽曲</h3>
+              <p class="option-price">30秒ごとに <strong>+¥500</strong></p>
+              <p class="option-example">例：+30秒で¥500、+1分で¥1,000</p>
             </div>
           </div>
 
           <div class="pricing-summary">
-            <p>4分以内の楽曲なら<strong>5,000円</strong>で一通りのMIX作業が完結。長い曲やハモリを追加したい場合は<strong>1,000円単位</strong>で追加料金が発生するシンプルな料金設定です。</p>
+            <p>4分30秒以内の楽曲なら<strong>7,000円</strong>で一通りのMIX作業が完結。4分30秒超は<strong>30秒ごとに¥500</strong>の追加料金が発生します。楽曲の長さやパート数によっては事前にお見積もりいたします。</p>
           </div>
         </section>
 
@@ -104,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="info-card">
               <span class="info-icon">🔄</span>
               <h3>無料修正回数</h3>
-              <p>2回</p>
+              <p>4回<span class="info-sub">（5回目以降 +¥500/回）</span></p>
             </div>
             <div class="info-card">
               <span class="info-icon">🎵</span>
@@ -114,13 +115,17 @@ import Layout from '../layouts/Layout.astro';
             <div class="info-card">
               <span class="info-icon">📁</span>
               <h3>ファイル形式</h3>
-              <p>WAV（44.1kHz）推奨</p>
+              <p>WAV（44.1kHz/16bit以上）推奨<span class="info-sub">（MP3でも対応可能）</span></p>
             </div>
           </div>
 
           <div class="notice-card">
             <h3>購入前のお願い</h3>
-            <p>購入前に必ず<strong>DMで相談</strong>し、音源と歌声データを送付の上、仕上がりのご希望をお伝えください。</p>
+            <ul class="notice-list">
+              <li>ご購入前に必ず<strong>DMでご相談</strong>ください。音源と歌声データをお送りいただき、仕上がりのご希望をお伺いします。</li>
+              <li>ファイル形式はWAV（44.1kHz/16bit以上）を推奨します。MP3でも対応可能ですが、音質に影響が出る場合があります。</li>
+              <li>楽曲の長さやパート数によっては追加料金が発生します。事前にお見積もりいたします。</li>
+            </ul>
           </div>
         </section>
 
@@ -151,22 +156,79 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </section>
 
+        <!-- 納品までの流れ -->
+        <section class="mix-section reveal">
+          <div class="section-label-bg">Flow</div>
+          <h2 class="mix-section-title">納品までの流れ</h2>
+
+          <ol class="flow-list">
+            <li class="flow-item">
+              <div class="flow-step">01</div>
+              <div class="flow-content">
+                <h3>ご相談・ヒアリング</h3>
+                <p>仕上がりイメージや参考楽曲をお伺いします。</p>
+              </div>
+            </li>
+            <li class="flow-item">
+              <div class="flow-step">02</div>
+              <div class="flow-content">
+                <h3>データ送付</h3>
+                <p>ボーカルトラック・伴奏データをお送りください。</p>
+              </div>
+            </li>
+            <li class="flow-item">
+              <div class="flow-step">03</div>
+              <div class="flow-content">
+                <h3>MIX・マスタリング作業</h3>
+                <p>いただいたデータをもとに作業を進めます。</p>
+              </div>
+            </li>
+            <li class="flow-item">
+              <div class="flow-step">04</div>
+              <div class="flow-content">
+                <h3>プレビュー提出</h3>
+                <p>仮MIXをお送りします。修正のご希望があれば対応します。</p>
+              </div>
+            </li>
+            <li class="flow-item">
+              <div class="flow-step">05</div>
+              <div class="flow-content">
+                <h3>最終納品</h3>
+                <p>修正を反映し、完成版を納品いたします。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
         <!-- CTA -->
         <section class="mix-section cta-section reveal">
           <h2 class="cta-heading">まずはお気軽にご相談ください</h2>
           <p class="cta-text">DMにて音源の確認・ご希望のヒアリングを行います</p>
-          <a
-            href="https://x.com/carrot_tpa"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-button"
-          >
-            <span class="cta-icon">𝕏</span>
-            <span>DMで相談する</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </a>
+          <div class="cta-buttons">
+            <a
+              href="https://x.com/carrot_tpa"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button"
+            >
+              <span class="cta-icon">𝕏</span>
+              <span>DMで相談する</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a
+              href="https://coconala.com/services/3206932"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button cta-button--secondary"
+            >
+              <span>Coconalaで購入する</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
         </section>
 
       </div>
@@ -645,6 +707,104 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-muted);
   }
 
+  /* ===== Notice List ===== */
+  .notice-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .notice-list li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .notice-list li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .notice-list li strong {
+    color: var(--color-text);
+  }
+
+  /* ===== Flow ===== */
+  .flow-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow-list::before {
+    content: '';
+    position: absolute;
+    left: 2.25rem;
+    top: 3.5rem;
+    bottom: 3.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-accent), transparent);
+    opacity: 0.3;
+  }
+
+  .flow-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 1.75rem;
+    background: rgba(255, 180, 100, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow:
+      0 3px 0 rgba(13, 10, 7, 0.4),
+      0 6px 15px rgba(0, 0, 0, 0.15),
+      inset 0 1px 2px rgba(255, 255, 255, 0.02);
+  }
+
+  .flow-item:hover {
+    border-color: rgba(255, 140, 66, 0.2);
+    transform: translateX(4px);
+    box-shadow:
+      0 4px 0 rgba(13, 10, 7, 0.3),
+      0 8px 20px rgba(0, 0, 0, 0.2),
+      inset 0 1px 2px rgba(255, 255, 255, 0.03);
+  }
+
+  .flow-step {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    opacity: 0.7;
+    flex-shrink: 0;
+    width: 2.75rem;
+    line-height: 1;
+    padding-top: 0.2rem;
+  }
+
+  .flow-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+  }
+
+  .flow-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
   /* ===== CTA ===== */
   .cta-section {
     text-align: center;
@@ -701,9 +861,40 @@ import Layout from '../layouts/Layout.astro';
       inset 0 2px 4px rgba(255, 255, 255, 0.1);
   }
 
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
   .cta-icon {
     font-size: 1.5rem;
     font-weight: 700;
+  }
+
+  .cta-button--secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 140, 66, 0.5);
+    color: var(--color-accent);
+    box-shadow:
+      0 4px 0 rgba(13, 10, 7, 0.4),
+      0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-button--secondary:hover {
+    background: rgba(255, 140, 66, 0.08);
+    border-color: var(--color-accent);
+    box-shadow:
+      0 6px 0 rgba(13, 10, 7, 0.3),
+      0 12px 30px rgba(255, 140, 66, 0.2);
+  }
+
+  .cta-button--secondary:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 1px 0 rgba(13, 10, 7, 0.3),
+      0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
   /* ===== Responsive ===== */
@@ -771,6 +962,11 @@ import Layout from '../layouts/Layout.astro';
     .cta-button {
       padding: 1rem 2rem;
       font-size: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
     }
   }
 

@@ -131,33 +131,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </section>
 
-        <!-- 出品者情報 -->
-        <section class="mix-section reveal">
-          <div class="section-label-bg">Profile</div>
-          <h2 class="mix-section-title">出品者情報</h2>
-
-          <div class="profile-card">
-            <div class="profile-stats">
-              <div class="stat-item">
-                <span class="stat-label">ランク</span>
-                <span class="stat-value">レギュラー</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">総合評価</span>
-                <span class="stat-value rating">⭐ 5.0<span class="stat-sub">（1件）</span></span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">販売実績</span>
-                <span class="stat-value">2件</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">経験</span>
-                <span class="stat-value">クリエイター / 音楽家・歌手<span class="stat-sub">（2年）</span></span>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- 納品までの流れ -->
         <section class="mix-section reveal">
           <div class="section-label-bg">Flow</div>
@@ -659,56 +632,6 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text);
   }
 
-  /* ===== Profile Card ===== */
-  .profile-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow:
-      0 4px 0 rgba(13, 10, 7, 0.5),
-      0 8px 25px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .profile-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .stat-item {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .stat-value {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-
-  .stat-value.rating {
-    color: var(--color-accent);
-  }
-
-  .stat-sub {
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
-  }
-
   /* ===== Notice List ===== */
   .notice-list {
     list-style: none;
@@ -953,10 +876,6 @@ import Layout from '../layouts/Layout.astro';
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .profile-stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
     .cta-section {
       padding: 2.5rem 1.5rem;
     }
@@ -1015,14 +934,7 @@ import Layout from '../layouts/Layout.astro';
       padding: 1.25rem;
     }
 
-    .profile-stats {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
 
-    .stat-item {
-      padding: 0.75rem;
-    }
 
     .cta-heading {
       font-size: 1.3rem;

@@ -3,53 +3,57 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="ColorSing初心者ガイド | きゃるのページ" description="ColorSing（カラーシング）の使い方を初心者リスナー向けにわかりやすく解説。用語集・応援方法まとめ付き。">
-  <div class="cs-page">
-    <!-- Hero -->
-    <div class="cs-hero">
-      <div class="cs-hero-content">
-        <h1 class="cs-hero-title">ColorSing<br /><span class="cs-hero-sub">初心者リスナーガイド</span></h1>
-        <p class="cs-hero-tagline">はじめてColorSingに来てくれた方へ</p>
-      </div>
-    </div>
+  <article class="cs-page">
 
-    <!-- Body -->
+    <!-- ===== Cover ===== -->
+    <header class="cs-cover">
+      <div class="cs-meta">
+        <span class="cs-meta-num">№ 003</span>
+        <span class="cs-meta-rule"></span>
+        <span class="cs-meta-label">Listener's Guide</span>
+      </div>
+      <h1 class="cs-hero-title">
+        <span class="cs-en">ColorSing</span>
+        <span class="cs-ja">初心者リスナーガイド</span>
+      </h1>
+      <p class="cs-hero-tagline">はじめてColorSingに来てくれた方へ</p>
+    </header>
+
     <div class="cs-body">
       <div class="cs-container">
 
-        <!-- まずはこれだけ！ -->
+        <!-- ===== Quickstart ===== -->
         <section class="cs-section cs-quickstart reveal">
-          <div class="cs-quickstart-badge">まずはこれだけ！</div>
+          <div class="cs-quickstart-badge">First Three Steps</div>
           <h2 class="cs-section-title">3ステップで始められます</h2>
-          <div class="cs-quick-steps">
-            <div class="cs-quick-step">
-              <div class="cs-quick-num">1</div>
+          <ol class="cs-quick-steps">
+            <li class="cs-quick-step">
+              <span class="cs-quick-num">01</span>
               <div class="cs-quick-text">
                 <strong>アプリをインストール</strong>
                 <p>「ColorSing」で検索（無料）</p>
               </div>
-            </div>
-            <div class="cs-quick-arrow" aria-hidden="true"></div>
-            <div class="cs-quick-step">
-              <div class="cs-quick-num">2</div>
+            </li>
+            <li class="cs-quick-step">
+              <span class="cs-quick-num">02</span>
               <div class="cs-quick-text">
                 <strong>ログインする</strong>
                 <p>LINE / Apple ID / Google</p>
               </div>
-            </div>
-            <div class="cs-quick-arrow" aria-hidden="true"></div>
-            <div class="cs-quick-step">
-              <div class="cs-quick-num">3</div>
+            </li>
+            <li class="cs-quick-step">
+              <span class="cs-quick-num">03</span>
               <div class="cs-quick-text">
                 <strong>配信をタップして聴く</strong>
                 <p>コメントしてみよう！</p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ol>
         </section>
 
-        <!-- 目次 -->
+        <!-- ===== TOC ===== -->
         <nav class="cs-toc reveal" aria-label="目次">
-          <h2 class="cs-toc-title">このページの内容</h2>
+          <h2 class="cs-toc-title">Contents</h2>
           <ul class="cs-toc-list">
             <li><a href="#about">ColorSingってなに？</a></li>
             <li><a href="#start">アプリの始め方</a></li>
@@ -60,871 +64,796 @@ import Layout from '../layouts/Layout.astro';
           </ul>
         </nav>
 
-        <!-- ColorSingってなに？ -->
+        <!-- ===== About ===== -->
         <section id="about" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">About</div>
-          <h2 class="cs-section-title">ColorSingってなに？</h2>
-          <div class="cs-card">
+          <header class="cs-section-head">
+            <span class="cs-section-num">01</span>
+            <h2 class="cs-section-title">ColorSingってなに？</h2>
+          </header>
+          <div class="cs-section-body">
             <p class="cs-text">
               <strong>ColorSing（カラーシング）</strong>は、歌に特化したライブ配信アプリです。<strong>JOYSOUND</strong>と提携しており、<strong>10万曲以上</strong>のカラオケ音源が使えます。歌が好きな人が集まるアプリで、<strong>配信も視聴も完全無料</strong>で楽しめます。
             </p>
-            <div class="cs-highlights">
-              <div class="cs-highlight-item">
-                <span class="cs-highlight-icon">🎤</span>
-                <div>
-                  <strong>歌特化</strong>
-                  <p>JOYSOUND提携・10万曲以上</p>
-                </div>
+            <dl class="cs-def-list">
+              <div class="cs-def-row">
+                <dt>歌特化</dt>
+                <dd>JOYSOUND提携・10万曲以上のカラオケ音源</dd>
               </div>
-              <div class="cs-highlight-item">
-                <span class="cs-highlight-icon">💰</span>
-                <div>
-                  <strong>完全無料</strong>
-                  <p>配信・視聴ともに無料</p>
-                </div>
+              <div class="cs-def-row">
+                <dt>完全無料</dt>
+                <dd>配信・視聴ともに無料で利用できます</dd>
               </div>
-              <div class="cs-highlight-item">
-                <span class="cs-highlight-icon">🎧</span>
-                <div>
-                  <strong>高音質</strong>
-                  <p>バックグラウンド再生にも対応</p>
-                </div>
+              <div class="cs-def-row">
+                <dt>高音質</dt>
+                <dd>バックグラウンド再生にも対応</dd>
               </div>
-            </div>
+            </dl>
           </div>
         </section>
 
-        <!-- アプリの始め方 -->
+        <!-- ===== Start ===== -->
         <section id="start" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">Start</div>
-          <h2 class="cs-section-title">アプリの始め方</h2>
-          <div class="cs-steps">
-            <div class="cs-step">
-              <div class="cs-step-number">1</div>
-              <div class="cs-step-content">
-                <h3>アプリをインストール</h3>
-                <p>App Store または Google Play で「ColorSing」を検索してインストール（無料）</p>
-              </div>
-            </div>
-            <div class="cs-step">
-              <div class="cs-step-number">2</div>
-              <div class="cs-step-content">
-                <h3>アカウント登録</h3>
-                <p>アプリを開いて、<strong>LINE・Apple ID・Google</strong> などでログイン。プロフィール（名前・アイコン）を設定します。初期アイコンのままでもOKです。</p>
-              </div>
-            </div>
-            <div class="cs-step">
-              <div class="cs-step-number">3</div>
-              <div class="cs-step-content">
-                <h3>好みの設定</h3>
-                <p>簡単な質問に答えて、おすすめの配信が表示されやすくなるようにします。</p>
-              </div>
-            </div>
-            <div class="cs-step">
-              <div class="cs-step-number">4</div>
-              <div class="cs-step-content">
-                <h3>配信を探して聴きに行こう</h3>
-                <p>ホーム画面に配信中のLシンガーが表示されます。サムネイルをタップすると配信に入れます。</p>
-              </div>
-            </div>
+          <header class="cs-section-head">
+            <span class="cs-section-num">02</span>
+            <h2 class="cs-section-title">アプリの始め方</h2>
+          </header>
+          <div class="cs-section-body">
+            <ol class="cs-steps">
+              <li class="cs-step">
+                <span class="cs-step-number">01</span>
+                <div class="cs-step-content">
+                  <h3>アプリをインストール</h3>
+                  <p>App Store または Google Play で「ColorSing」を検索してインストール（無料）</p>
+                </div>
+              </li>
+              <li class="cs-step">
+                <span class="cs-step-number">02</span>
+                <div class="cs-step-content">
+                  <h3>アカウント登録</h3>
+                  <p>アプリを開いて、<strong>LINE・Apple ID・Google</strong> などでログイン。プロフィール（名前・アイコン）を設定します。初期アイコンのままでもOKです。</p>
+                </div>
+              </li>
+              <li class="cs-step">
+                <span class="cs-step-number">03</span>
+                <div class="cs-step-content">
+                  <h3>好みの設定</h3>
+                  <p>簡単な質問に答えて、おすすめの配信が表示されやすくなるようにします。</p>
+                </div>
+              </li>
+              <li class="cs-step">
+                <span class="cs-step-number">04</span>
+                <div class="cs-step-content">
+                  <h3>配信を探して聴きに行こう</h3>
+                  <p>ホーム画面に配信中のLシンガーが表示されます。サムネイルをタップすると配信に入れます。</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </section>
 
-        <!-- 配信の楽しみ方 -->
+        <!-- ===== Enjoy ===== -->
         <section id="enjoy" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">Enjoy</div>
-          <h2 class="cs-section-title">配信の楽しみ方</h2>
-
-          <div class="cs-feature-grid">
-            <div class="cs-feature-card">
-              <span class="cs-recommend-badge">初心者おすすめ</span>
-              <div class="cs-feature-icon">💬</div>
-              <h3>コメントを送ろう</h3>
-              <p>画面下のコメント欄からメッセージを送れます。「初見です！」「○○の曲好きです！」など気軽にコメントしてみましょう。</p>
-            </div>
-
-            <div class="cs-feature-card">
-              <span class="cs-recommend-badge">初心者おすすめ</span>
-              <div class="cs-feature-icon">❤️</div>
-              <h3>スーパーいいねを送ろう</h3>
-              <p>視聴中、画面右の♡ボタンの周りがたまっていきます。MAXになったら押すと「スーパーいいね」を送れます。ランダムでコインがもらえます。<strong>1日5回送ると「出席」扱い</strong>になります。</p>
-            </div>
-
-            <div class="cs-feature-card">
-              <div class="cs-feature-icon">🎁</div>
-              <h3>ギフトを贈ろう</h3>
-              <p>画面右の🎁ボタンからギフトを送れます。コインを使ってギフトを購入し、Lシンガーに贈ることで配信を盛り上げられます。<strong>数コインで送れるギフトもたくさんある</strong>ので、無課金でも気軽に応援できます。</p>
-            </div>
-
-            <div class="cs-feature-card">
-              <div class="cs-feature-icon">🎶</div>
-              <h3>リクエストしてみよう</h3>
-              <p>聴きたい曲があったら、リクエスト機能を使ってLシンガーにお願いできます。レパートリーの中から選ぶ形式です。</p>
-            </div>
-
-            <div class="cs-feature-card">
-              <div class="cs-feature-icon">👀</div>
-              <h3>視聴スタンスを設定しよう</h3>
-              <p>自分の視聴状態を表示できます。「いつも通り」「潜り聞き中」（作業中で歌は聴いているけどリアクションできない時）など、状況に合わせて設定しましょう。</p>
-            </div>
+          <header class="cs-section-head">
+            <span class="cs-section-num">03</span>
+            <h2 class="cs-section-title">配信の楽しみ方</h2>
+          </header>
+          <div class="cs-section-body">
+            <ul class="cs-feature-list">
+              <li class="cs-feature">
+                <span class="cs-recommend-tag">初心者おすすめ</span>
+                <h3>コメントを送ろう</h3>
+                <p>画面下のコメント欄からメッセージを送れます。「初見です！」「○○の曲好きです！」など気軽にコメントしてみましょう。</p>
+              </li>
+              <li class="cs-feature">
+                <span class="cs-recommend-tag">初心者おすすめ</span>
+                <h3>スーパーいいねを送ろう</h3>
+                <p>視聴中、画面右の♡ボタンの周りがたまっていきます。MAXになったら押すと「スーパーいいね」を送れます。ランダムでコインがもらえます。<strong>1日5回送ると「出席」扱い</strong>になります。</p>
+              </li>
+              <li class="cs-feature">
+                <h3>ギフトを贈ろう</h3>
+                <p>画面右の🎁ボタンからギフトを送れます。コインを使ってギフトを購入し、Lシンガーに贈ることで配信を盛り上げられます。<strong>数コインで送れるギフトもたくさんある</strong>ので、無課金でも気軽に応援できます。</p>
+              </li>
+              <li class="cs-feature">
+                <h3>リクエストしてみよう</h3>
+                <p>聴きたい曲があったら、リクエスト機能を使ってLシンガーにお願いできます。レパートリーの中から選ぶ形式です。</p>
+              </li>
+              <li class="cs-feature">
+                <h3>視聴スタンスを設定しよう</h3>
+                <p>自分の視聴状態を表示できます。「いつも通り」「潜り聞き中」（作業中で歌は聴いているけどリアクションできない時）など、状況に合わせて設定しましょう。</p>
+              </li>
+            </ul>
           </div>
         </section>
 
-        <!-- 応援まとめ -->
+        <!-- ===== Cheer ===== -->
         <section id="cheer" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">Cheer</div>
-          <h2 class="cs-section-title">応援する方法まとめ</h2>
-          <p class="cs-lead">無課金でもできる応援はたくさんあります。</p>
+          <header class="cs-section-head">
+            <span class="cs-section-num">04</span>
+            <h2 class="cs-section-title">応援する方法まとめ</h2>
+          </header>
+          <div class="cs-section-body">
+            <p class="cs-lead">無課金でもできる応援はたくさんあります。</p>
 
-          <div class="cs-cheer-list">
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">👁️</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>配信を見に行く</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
-                  <span class="cs-recommend-badge-sm">おすすめ</span>
+            <ul class="cs-cheer-list">
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">配信を見に行く</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
+                  <span class="cs-tag cs-tag-rec">おすすめ</span>
                 </div>
                 <p>視聴するだけでもLシンガーの力になります</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">💬</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>コメントで盛り上げる</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
-                  <span class="cs-recommend-badge-sm">おすすめ</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">コメントで盛り上げる</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
+                  <span class="cs-tag cs-tag-rec">おすすめ</span>
                 </div>
                 <p>コメントもライブスコアに反映されます</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">❤️</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>スーパーいいねを送る</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
-                  <span class="cs-recommend-badge-sm">おすすめ</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">スーパーいいねを送る</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
+                  <span class="cs-tag cs-tag-rec">おすすめ</span>
                 </div>
                 <p>1日5回で出席扱い。コインももらえます</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">🎁</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>枠内コインでギフト</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">枠内コインでギフト</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
                 </div>
                 <p>その枠限定のコインなので気兼ねなく使おう</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">🎁</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>ログインボーナスでギフト</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">ログインボーナスでギフト</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
                 </div>
                 <p>毎日もらえるコインでギフトを贈ろう</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">🎶</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>リクエスト</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">リクエスト</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
                 </div>
                 <p>好きな曲をお願いしてみよう</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">⭐</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>歌推しを目指す</strong>
-                  <span class="cs-badge cs-badge-free">無料</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">歌推しを目指す</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-free">無料</span>
                 </div>
                 <p>月間推しPt 1,000以上で歌推しに。Lシンガーにボーナスが入ります</p>
-              </div>
-            </div>
-            <div class="cs-cheer-item">
-              <span class="cs-cheer-icon">💎</span>
-              <div class="cs-cheer-body">
-                <div class="cs-cheer-top">
-                  <strong>コインを購入してギフト</strong>
-                  <span class="cs-badge cs-badge-paid">課金</span>
+              </li>
+              <li class="cs-cheer-item">
+                <div class="cs-cheer-name">コインを購入してギフト</div>
+                <div class="cs-cheer-tags">
+                  <span class="cs-tag cs-tag-paid">課金</span>
                 </div>
                 <p>課金でコインを購入し、たくさんギフトを贈れます</p>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </section>
 
-        <!-- 用語集 -->
+        <!-- ===== Words ===== -->
         <section id="words" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">Words</div>
-          <h2 class="cs-section-title">よく出てくる用語集</h2>
-          <p class="cs-lead">タップで開いて確認できます。最初はわからなくても大丈夫！</p>
+          <header class="cs-section-head">
+            <span class="cs-section-num">05</span>
+            <h2 class="cs-section-title">よく出てくる用語集</h2>
+          </header>
+          <div class="cs-section-body">
+            <p class="cs-lead">タップで開いて確認できます。最初はわからなくても大丈夫。</p>
 
-          <!-- 人に関する用語 -->
-          <details class="cs-accordion">
-            <summary class="cs-accordion-trigger">
-              <span class="cs-accordion-icon">👤</span>
-              <span>人に関する用語</span>
-              <span class="cs-accordion-arrow"></span>
-            </summary>
-            <div class="cs-accordion-body">
-              <div class="cs-term-card">
-                <div class="cs-term-name">Lシンガー<span class="cs-ruby">（エルシンガー）</span></div>
-                <p>ColorSingで配信をする歌い手のこと。「Live Singer」の略。審査に合格したColorSing認定の配信者だけがLシンガーとして配信できます。</p>
+            <details class="cs-accordion">
+              <summary class="cs-accordion-trigger">
+                <span class="cs-accordion-label">人に関する用語</span>
+                <span class="cs-accordion-arrow"></span>
+              </summary>
+              <div class="cs-accordion-body">
+                <div class="cs-term-card">
+                  <div class="cs-term-name">Lシンガー<span class="cs-ruby">（エルシンガー）</span></div>
+                  <p>ColorSingで配信をする歌い手のこと。「Live Singer」の略。審査に合格したColorSing認定の配信者だけがLシンガーとして配信できます。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">リスナー</div>
+                  <p>配信を視聴する人のこと。コメントやギフトでLシンガーを応援します。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">歌推し<span class="cs-ruby">（うたおし）</span></div>
+                  <p>月間の推しPtが<strong>1K（1,000ポイント）以上</strong>になると得られる称号。歌推しの人数が増えるとLシンガーにボーナスが入るので、とても大きな応援になります。</p>
+                </div>
               </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">リスナー</div>
-                <p>配信を視聴する人のこと。コメントやギフトでLシンガーを応援します。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">歌推し<span class="cs-ruby">（うたおし）</span></div>
-                <p>月間の推しPtが<strong>1K（1,000ポイント）以上</strong>になると得られる称号。歌推しの人数が増えるとLシンガーにボーナスが入るので、とても大きな応援になります。</p>
-              </div>
-            </div>
-          </details>
+            </details>
 
-          <!-- お金・ポイント -->
-          <details class="cs-accordion">
-            <summary class="cs-accordion-trigger">
-              <span class="cs-accordion-icon">💎</span>
-              <span>お金・ポイントに関する用語</span>
-              <span class="cs-accordion-arrow"></span>
-            </summary>
-            <div class="cs-accordion-body">
-              <div class="cs-term-card">
-                <div class="cs-term-name">コイン</div>
-                <p>リスナーが使う通貨。ギフト購入に使います。ログインボーナスやスーパーいいねでも無料で手に入ります。課金でも購入可能。</p>
+            <details class="cs-accordion">
+              <summary class="cs-accordion-trigger">
+                <span class="cs-accordion-label">お金・ポイントに関する用語</span>
+                <span class="cs-accordion-arrow"></span>
+              </summary>
+              <div class="cs-accordion-body">
+                <div class="cs-term-card">
+                  <div class="cs-term-name">コイン</div>
+                  <p>リスナーが使う通貨。ギフト購入に使います。ログインボーナスやスーパーいいねでも無料で手に入ります。課金でも購入可能。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">枠内コイン<span class="cs-ruby">（わくないコイン）</span></div>
+                  <p>スーパーいいねなどで獲得したコインの一部で、<strong>その配信枠の中でしか使えない</strong>コインです。配信中にどんどんギフトに使ってあげましょう。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">ギフト</div>
+                  <p>コインを消費してLシンガーに贈るデジタルアイテム。<strong>200種類以上</strong>あり、音楽にちなんだものが多いです。画面にエフェクトが表示されて配信が盛り上がります。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">ダイヤ</div>
+                  <p>Lシンガー側の報酬。条件により<strong>1ダイヤ＝0.6〜1.0円</strong>で換金できます。リスナーの応援（ギフト・視聴・コメントなど）がダイヤに反映されます。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">推しPt<span class="cs-ruby">（おしポイント）</span></div>
+                  <p>リスナーとLシンガーの絆の大きさを示すポイント。ギフト利用・視聴時間・スーパーいいね回数などの応援行動で獲得。旬ごと・月間で集計されます。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">推しバッジ</div>
+                  <p>一定の推しPtを獲得すると得られるバッジ。コメント欄の名前横に表示され、応援の度合いがわかります。</p>
+                </div>
               </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">枠内コイン<span class="cs-ruby">（わくないコイン）</span></div>
-                <p>スーパーいいねなどで獲得したコインの一部で、<strong>その配信枠の中でしか使えない</strong>コインです。配信中にどんどんギフトに使ってあげましょう。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">ギフト</div>
-                <p>コインを消費してLシンガーに贈るデジタルアイテム。<strong>200種類以上</strong>あり、音楽にちなんだものが多いです。画面にエフェクトが表示されて配信が盛り上がります。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">ダイヤ</div>
-                <p>Lシンガー側の報酬。条件により<strong>1ダイヤ＝0.6〜1.0円</strong>で換金できます。リスナーの応援（ギフト・視聴・コメントなど）がダイヤに反映されます。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">推しPt<span class="cs-ruby">（おしポイント）</span></div>
-                <p>リスナーとLシンガーの絆の大きさを示すポイント。ギフト利用・視聴時間・スーパーいいね回数などの応援行動で獲得。旬ごと・月間で集計されます。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">推しバッジ</div>
-                <p>一定の推しPtを獲得すると得られるバッジ。コメント欄の名前横に表示され、応援の度合いがわかります。</p>
-              </div>
-            </div>
-          </details>
+            </details>
 
-          <!-- 時間・期間 -->
-          <details class="cs-accordion">
-            <summary class="cs-accordion-trigger">
-              <span class="cs-accordion-icon">📅</span>
-              <span>時間・期間に関する用語</span>
-              <span class="cs-accordion-arrow"></span>
-            </summary>
-            <div class="cs-accordion-body">
-              <div class="cs-term-card">
-                <div class="cs-term-name">旬<span class="cs-ruby">（しゅん）</span></div>
-                <p>ColorSingの集計期間。1ヶ月を3つに区切ります。<strong>上旬（1〜10日）、中旬（11〜20日）、下旬（21〜月末）</strong>。推しPtやリーグの集計がこの単位で行われます。</p>
+            <details class="cs-accordion">
+              <summary class="cs-accordion-trigger">
+                <span class="cs-accordion-label">時間・期間に関する用語</span>
+                <span class="cs-accordion-arrow"></span>
+              </summary>
+              <div class="cs-accordion-body">
+                <div class="cs-term-card">
+                  <div class="cs-term-name">旬<span class="cs-ruby">（しゅん）</span></div>
+                  <p>ColorSingの集計期間。1ヶ月を3つに区切ります。<strong>上旬（1〜10日）、中旬（11〜20日）、下旬（21〜月末）</strong>。推しPtやリーグの集計がこの単位で行われます。</p>
+                </div>
               </div>
-            </div>
-          </details>
+            </details>
 
-          <!-- 配信・システム -->
-          <details class="cs-accordion">
-            <summary class="cs-accordion-trigger">
-              <span class="cs-accordion-icon">⚙️</span>
-              <span>配信・システムに関する用語</span>
-              <span class="cs-accordion-arrow"></span>
-            </summary>
-            <div class="cs-accordion-body">
-              <div class="cs-term-card">
-                <div class="cs-term-name">リーグ</div>
-                <p>Lシンガーのランク制度。リーグが上がるほど報酬が増えます。毎日昇格戦が行われ、<strong>降格はありません</strong>。リスナーの応援がリーグ昇格の鍵です。</p>
+            <details class="cs-accordion">
+              <summary class="cs-accordion-trigger">
+                <span class="cs-accordion-label">配信・システムに関する用語</span>
+                <span class="cs-accordion-arrow"></span>
+              </summary>
+              <div class="cs-accordion-body">
+                <div class="cs-term-card">
+                  <div class="cs-term-name">リーグ</div>
+                  <p>Lシンガーのランク制度。リーグが上がるほど報酬が増えます。毎日昇格戦が行われ、<strong>降格はありません</strong>。リスナーの応援がリーグ昇格の鍵です。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">ライブスコア</div>
+                  <p>応援の総量を表すスコア。コメント・視聴・いいね・ギフト使用の総数や人数から算出されます。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">昇格戦<span class="cs-ruby">（しょうかくせん）</span></div>
+                  <p>毎日行われるリーグ昇格のための戦い。ライブスコアに応じて経験値を獲得し、リーグアップを目指します。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">パール</div>
+                  <p>イベントで得られるポイント。プライズ（景品）と交換できます。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">プライズ</div>
+                  <p>パールと交換できる景品のこと。</p>
+                </div>
+                <div class="cs-term-card">
+                  <div class="cs-term-name">パール杯</div>
+                  <p>プライズと交換するためのパールを獲得できるイベント。</p>
+                </div>
               </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">ライブスコア</div>
-                <p>応援の総量を表すスコア。コメント・視聴・いいね・ギフト使用の総数や人数から算出されます。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">昇格戦<span class="cs-ruby">（しょうかくせん）</span></div>
-                <p>毎日行われるリーグ昇格のための戦い。ライブスコアに応じて経験値を獲得し、リーグアップを目指します。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">パール</div>
-                <p>イベントで得られるポイント。プライズ（景品）と交換できます。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">プライズ</div>
-                <p>パールと交換できる景品のこと。</p>
-              </div>
-              <div class="cs-term-card">
-                <div class="cs-term-name">パール杯</div>
-                <p>プライズと交換するためのパールを獲得できるイベント。</p>
-              </div>
-            </div>
-          </details>
-        </section>
-
-        <!-- 知っておくと便利 -->
-        <section id="tips" class="cs-section reveal">
-          <div class="section-label-bg" aria-hidden="true">Tips</div>
-          <h2 class="cs-section-title">知っておくと便利なこと</h2>
-          <div class="cs-tips">
-            <div class="cs-tip">
-              <span class="cs-tip-icon">✅</span>
-              <p>配信・視聴は<strong>完全無料</strong>です</p>
-            </div>
-            <div class="cs-tip">
-              <span class="cs-tip-icon">🪙</span>
-              <p>ログインボーナスで<strong>毎日コインがもらえます</strong></p>
-            </div>
-            <div class="cs-tip">
-              <span class="cs-tip-icon">❤️</span>
-              <p>スーパーいいねでランダムにコインがもらえます（11回目以降はほぼゼロになるので注意）</p>
-            </div>
-            <div class="cs-tip">
-              <span class="cs-tip-icon">🎁</span>
-              <p>枠内コインはその配信中しか使えないので、<strong>遠慮なくギフトに使おう</strong></p>
-            </div>
-            <div class="cs-tip">
-              <span class="cs-tip-icon">🎵</span>
-              <p>歌が好きな人ばかりなので、アプリの雰囲気は<strong>とても良好</strong>です</p>
-            </div>
-            <div class="cs-tip">
-              <span class="cs-tip-icon">📱</span>
-              <p><strong>バックグラウンド再生</strong>に対応しているので、作業しながら聴くこともできます</p>
-            </div>
+            </details>
           </div>
         </section>
 
-        <!-- CTA -->
+        <!-- ===== Tips ===== -->
+        <section id="tips" class="cs-section reveal">
+          <header class="cs-section-head">
+            <span class="cs-section-num">06</span>
+            <h2 class="cs-section-title">知っておくと便利なこと</h2>
+          </header>
+          <div class="cs-section-body">
+            <ul class="cs-tips">
+              <li class="cs-tip">配信・視聴は<strong>完全無料</strong>です</li>
+              <li class="cs-tip">ログインボーナスで<strong>毎日コインがもらえます</strong></li>
+              <li class="cs-tip">スーパーいいねでランダムにコインがもらえます（11回目以降はほぼゼロになるので注意）</li>
+              <li class="cs-tip">枠内コインはその配信中しか使えないので、<strong>遠慮なくギフトに使おう</strong></li>
+              <li class="cs-tip">歌が好きな人ばかりなので、アプリの雰囲気は<strong>とても良好</strong>です</li>
+              <li class="cs-tip"><strong>バックグラウンド再生</strong>に対応しているので、作業しながら聴くこともできます</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
         <section class="cs-section cs-cta-section reveal">
-          <h2 class="cs-cta-heading">きゃるの配信に遊びに来てね！</h2>
-          <p class="cs-cta-text">ColorSingできゃるの歌配信を聴きに来てください</p>
-          <a
-            href="https://web.colorsing.com/share/live?live_id=2d0a51ab-7078-4853-9864-5078fbb9ebab"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cs-cta-btn"
-          >
-            ColorSingで聴きに行く
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
+          <header class="cs-section-head">
+            <span class="cs-section-num">07</span>
+            <h2 class="cs-section-title">Visit My Stream</h2>
+          </header>
+          <div class="cs-section-body">
+            <p class="cs-cta-text">きゃるの配信に遊びに来てね！ColorSingで歌配信を聴きに来てください。</p>
+            <a
+              href="https://web.colorsing.com/share/live?live_id=2d0a51ab-7078-4853-9864-5078fbb9ebab"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cs-cta-btn"
+            >
+              ColorSingで聴きに行く <span class="cs-cta-arrow">→</span>
+            </a>
+          </div>
         </section>
 
       </div>
     </div>
-  </div>
+  </article>
 </Layout>
+
+<script>
+  import '../scripts/reveal.ts';
+</script>
 
 <style>
   /* ===== Page Base ===== */
   .cs-page {
+    background: var(--paper);
+    color: var(--ink);
     min-height: 100vh;
-    background: var(--color-bg);
-    color: var(--color-text);
+    padding-top: 80px;
   }
 
-  /* ===== Hero ===== */
-  .cs-hero {
-    position: relative;
-    padding: 8rem 2rem 4rem;
-    text-align: center;
-    background: linear-gradient(180deg, #1a1510 0%, var(--color-bg) 100%);
-    overflow: hidden;
+  /* ===== Cover ===== */
+  .cs-cover {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .cs-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 30%, rgba(255, 140, 66, 0.08), transparent 60%);
-    pointer-events: none;
+  .cs-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .cs-meta-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+  }
+
+  .cs-meta-rule {
+    width: 32px;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .cs-meta-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
   }
 
   .cs-hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 900;
-    line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-cream) 30%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    line-height: 1;
   }
 
-  .cs-hero-sub {
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-    font-weight: 700;
+  .cs-en {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .cs-ja {
+    font-family: var(--font-mincho);
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 500;
+    color: var(--ink-mute);
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
   }
 
   .cs-hero-tagline {
-    font-size: 1.1rem;
-    color: var(--color-text-muted);
-    font-weight: 400;
+    font-family: var(--font-mincho);
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
   }
 
   /* ===== Body ===== */
   .cs-body {
-    padding: 0 1rem;
-  }
-
-  .cs-container {
-    max-width: 900px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
-  /* ===== Quick Start ===== */
-  .cs-quickstart {
-    padding-top: 2.5rem;
-  }
-
-  .cs-quickstart-badge {
-    display: inline-block;
-    padding: 0.35rem 1rem;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent2));
-    color: white;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .cs-quick-steps {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .cs-quick-step {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: rgba(255, 180, 100, 0.05);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    flex: 1;
-    min-width: 200px;
-    max-width: 280px;
-  }
-
-  .cs-quick-num {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent2));
-    color: white;
-    border-radius: 50%;
-    font-weight: 800;
-    font-size: 1rem;
-  }
-
-  .cs-quick-text strong {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--color-text);
-    margin-bottom: 0.15rem;
-  }
-
-  .cs-quick-text p {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    margin: 0;
-  }
-
-  .cs-quick-arrow {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    position: relative;
-  }
-
-  .cs-quick-arrow::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid var(--color-accent);
-    border-bottom: 2px solid var(--color-accent);
-    transform: translate(-70%, -50%) rotate(-45deg);
-    opacity: 0.5;
-  }
-
-  /* ===== TOC ===== */
-  .cs-toc {
-    padding: 1.5rem;
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    margin: 1.5rem 0 1rem;
-  }
-
-  .cs-toc-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-  }
-
-  .cs-toc-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.4rem 1.5rem;
-  }
-
-  .cs-toc-list li a {
-    display: block;
-    padding: 0.7rem 0;
-    color: var(--color-accent);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: opacity 0.2s;
-    min-height: 44px;
-    line-height: 1.4;
-  }
-
-  .cs-toc-list li a:hover {
-    opacity: 0.7;
-  }
-
-  .cs-toc-list li a::before {
-    content: '# ';
-    opacity: 0.4;
+  .cs-container {
+    width: 100%;
   }
 
   /* ===== Section ===== */
   .cs-section {
-    padding: 3.5rem 0;
-    position: relative;
-    border-bottom: 1px solid var(--color-border);
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--rule);
   }
 
   .cs-section:last-child {
     border-bottom: none;
   }
 
-  .section-label-bg {
-    font-size: clamp(4rem, 10vw, 6rem);
-    font-weight: 900;
-    color: rgba(255, 180, 100, 0.04);
-    text-transform: uppercase;
-    line-height: 1;
-    pointer-events: none;
-    font-family: var(--font-heading);
-    margin-bottom: -2rem;
+  .cs-section-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-section-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-mute);
   }
 
   .cs-section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.15;
   }
 
-  .cs-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--color-accent);
-    border-radius: 2px;
+  .cs-section-body {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
   }
 
-  .cs-lead {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
-  }
-
-  /* ===== Card ===== */
-  .cs-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 2rem;
+  .cs-section-body > * {
+    grid-column: 2;
   }
 
   .cs-text {
+    font-family: var(--font-mincho);
     font-size: 1rem;
-    line-height: 1.8;
-    color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 1.75rem;
   }
 
-  .cs-highlights {
+  .cs-text strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .cs-lead {
+    font-family: var(--font-mincho);
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.75rem;
+    line-height: 1.85;
+  }
+
+  /* ===== Quickstart ===== */
+  .cs-quickstart {
+    padding-top: 4rem;
+  }
+
+  .cs-quickstart .cs-section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .cs-quickstart-badge {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cs-quick-steps {
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    gap: 1.5rem;
   }
 
-  .cs-highlight-item {
+  .cs-quick-step {
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.85rem;
-    background: rgba(255, 140, 66, 0.05);
-    border-radius: 12px;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--rule);
+    background: var(--paper-warm);
   }
 
-  .cs-highlight-icon {
-    font-size: 1.3rem;
+  .cs-quick-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--ink-mute);
+    line-height: 1;
     flex-shrink: 0;
+    padding-top: 0.15rem;
   }
 
-  .cs-highlight-item strong {
-    color: var(--color-text);
+  .cs-quick-text {
+    flex: 1;
+  }
+
+  .cs-quick-text strong {
     display: block;
-    font-size: 0.9rem;
-    margin-bottom: 0.15rem;
+    font-family: var(--font-mincho);
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
   }
 
-  .cs-highlight-item p {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    margin: 0;
-    line-height: 1.4;
+  .cs-quick-text p {
+    font-family: var(--font-mincho);
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+
+  /* ===== TOC ===== */
+  .cs-toc {
+    padding: 2rem 2rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 0 0 1rem;
+  }
+
+  .cs-toc-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .cs-toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem 2rem;
+  }
+
+  .cs-toc-list li a {
+    font-family: var(--font-mincho);
+    font-size: 0.95rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .cs-toc-list li a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ===== Definition List ===== */
+  .cs-def-list {
+    border-top: 1px solid var(--rule);
+  }
+
+  .cs-def-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .cs-def-row dt {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--ink-mute);
+    font-size: 0.95rem;
+  }
+
+  .cs-def-row dd {
+    font-family: var(--font-mincho);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--ink);
   }
 
   /* ===== Steps ===== */
   .cs-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    list-style: none;
+    border-top: 1px solid var(--rule);
   }
 
   .cs-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem;
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    transition: border-color 0.3s ease;
-  }
-
-  .cs-step:hover {
-    border-color: rgba(255, 140, 66, 0.3);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
   }
 
   .cs-step-number {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent2));
-    color: white;
-    border-radius: 50%;
-    font-weight: 800;
-    font-size: 1rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.85rem;
+    color: var(--ink-mute);
+    line-height: 1;
   }
 
   .cs-step-content h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.25rem;
+    font-family: var(--font-mincho);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.45rem;
   }
 
   .cs-step-content p {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
+    font-family: var(--font-mincho);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
   }
 
-  /* ===== Feature Grid ===== */
-  .cs-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+  .cs-step-content strong {
+    color: var(--ink);
+    font-weight: 700;
   }
 
-  .cs-feature-card {
+  /* ===== Feature List ===== */
+  .cs-feature-list {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cs-feature {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
     position: relative;
-    padding: 1.25rem;
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    transition: all 0.3s ease;
   }
 
-  .cs-feature-card:hover {
-    border-color: rgba(255, 140, 66, 0.3);
-    transform: translateY(-2px);
+  .cs-recommend-tag {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
   }
 
-  .cs-feature-icon {
-    font-size: 1.75rem;
+  .cs-feature h3 {
+    font-family: var(--font-mincho);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
     margin-bottom: 0.5rem;
   }
 
-  .cs-feature-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.4rem;
+  .cs-feature p {
+    font-family: var(--font-mincho);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
   }
 
-  .cs-feature-card p {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-  }
-
-  /* Recommend badge */
-  .cs-recommend-badge {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    background: rgba(80, 200, 120, 0.15);
-    color: #50c878;
-    border: 1px solid rgba(80, 200, 120, 0.3);
-    border-radius: 50px;
-    font-size: 0.7rem;
+  .cs-feature p strong {
+    color: var(--ink);
     font-weight: 700;
   }
 
-  .cs-recommend-badge-sm {
-    padding: 0.2rem 0.55rem;
-    background: rgba(80, 200, 120, 0.15);
-    color: #50c878;
-    border: 1px solid rgba(80, 200, 120, 0.3);
-    border-radius: 50px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* ===== Cheer List (mobile-friendly card layout) ===== */
+  /* ===== Cheer List ===== */
   .cs-cheer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    list-style: none;
+    border-top: 1px solid var(--rule);
   }
 
   .cs-cheer-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0.4rem 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .cs-cheer-name {
+    font-family: var(--font-mincho);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    grid-column: 1;
+  }
+
+  .cs-cheer-tags {
     display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    gap: 0.4rem;
+    grid-column: 2;
+    grid-row: 1;
   }
 
-  .cs-cheer-icon {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    line-height: 1.4;
-  }
-
-  .cs-cheer-body {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .cs-cheer-top {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.2rem;
-  }
-
-  .cs-cheer-top strong {
+  .cs-cheer-item p {
+    grid-column: 1 / -1;
+    font-family: var(--font-mincho);
     font-size: 0.9rem;
-    color: var(--color-text);
+    color: var(--ink-soft);
+    line-height: 1.7;
   }
 
-  .cs-cheer-body > p {
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
+  .cs-tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    padding: 0.15rem 0.6rem;
+    border: 1px solid var(--rule);
+    letter-spacing: 0.05em;
     line-height: 1.5;
   }
 
-  .cs-badge {
-    display: inline-block;
-    padding: 0.15rem 0.5rem;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    flex-shrink: 0;
+  .cs-tag-free {
+    color: var(--ink-soft);
+    background: var(--paper-warm);
   }
 
-  .cs-badge-free {
-    background: rgba(80, 200, 120, 0.15);
-    color: #50c878;
-    border: 1px solid rgba(80, 200, 120, 0.3);
+  .cs-tag-paid {
+    color: var(--accent);
+    background: var(--paper);
+    border-color: var(--accent);
   }
 
-  .cs-badge-paid {
-    background: rgba(255, 140, 66, 0.15);
-    color: var(--color-accent);
-    border: 1px solid rgba(255, 140, 66, 0.3);
+  .cs-tag-rec {
+    color: var(--accent);
+    background: var(--paper);
+    border-style: dashed;
   }
 
-  /* ===== Accordion (用語集) ===== */
+  /* ===== Accordion ===== */
   .cs-accordion {
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    margin-bottom: 0.75rem;
-    overflow: hidden;
-    background: rgba(255, 180, 100, 0.02);
+    border-top: 1px solid var(--rule);
   }
 
-  .cs-accordion[open] {
-    border-color: rgba(255, 140, 66, 0.25);
+  .cs-accordion:last-of-type {
+    border-bottom: 1px solid var(--rule);
   }
 
   .cs-accordion-trigger {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-text);
-    cursor: pointer;
     list-style: none;
-    user-select: none;
-    transition: background 0.2s;
+    cursor: pointer;
+    padding: 1.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mincho);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: color 0.2s ease;
   }
 
   .cs-accordion-trigger::-webkit-details-marker {
@@ -932,250 +861,211 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .cs-accordion-trigger:hover {
-    background: rgba(255, 140, 66, 0.04);
-  }
-
-  .cs-accordion-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
+    color: var(--accent);
   }
 
   .cs-accordion-arrow {
-    margin-left: auto;
-    width: 20px;
-    height: 20px;
-    position: relative;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
     flex-shrink: 0;
+    margin-bottom: 4px;
   }
 
-  .cs-accordion-arrow::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--color-text-muted);
-    border-bottom: 2px solid var(--color-text-muted);
-    transform: translate(-50%, -65%) rotate(45deg);
-    transition: transform 0.25s ease;
-  }
-
-  .cs-accordion[open] .cs-accordion-arrow::before {
-    transform: translate(-50%, -35%) rotate(-135deg);
+  .cs-accordion[open] .cs-accordion-arrow {
+    transform: rotate(-135deg);
+    margin-bottom: -4px;
   }
 
   .cs-accordion-body {
-    padding: 0 1.25rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    padding: 0 0 1.5rem;
   }
 
-  /* Term Card */
   .cs-term-card {
-    padding: 0.85rem 1rem;
-    background: rgba(255, 140, 66, 0.03);
-    border-radius: 10px;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .cs-term-card:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 
   .cs-term-name {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.3rem;
+    font-family: var(--font-mincho);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
   }
 
   .cs-ruby {
     font-size: 0.78rem;
+    color: var(--ink-mute);
+    margin-left: 0.3em;
     font-weight: 400;
-    color: var(--color-text-muted);
-    opacity: 0.7;
   }
 
   .cs-term-card p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    color: var(--color-text-muted);
+    font-family: var(--font-mincho);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
   }
 
-  .cs-term-card p strong {
-    color: var(--color-text);
+  .cs-term-card strong {
+    color: var(--ink);
+    font-weight: 700;
   }
 
   /* ===== Tips ===== */
   .cs-tips {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    list-style: none;
+    border-top: 1px solid var(--rule);
   }
 
   .cs-tip {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.85rem 1rem;
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-mincho);
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    position: relative;
+    padding-left: 1.5rem;
   }
 
-  .cs-tip-icon {
-    font-size: 1.15rem;
-    flex-shrink: 0;
-    line-height: 1.6;
+  .cs-tip::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1;
+    top: 1.2rem;
   }
 
-  .cs-tip p {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-  }
-
-  .cs-tip p strong {
-    color: var(--color-text);
+  .cs-tip strong {
+    color: var(--ink);
+    font-weight: 700;
   }
 
   /* ===== CTA ===== */
-  .cs-cta-section {
-    text-align: center;
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .cs-cta-heading {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    color: var(--color-text);
-    margin-bottom: 0.75rem;
-  }
-
   .cs-cta-text {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    font-family: var(--font-mincho);
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 1.75rem;
   }
 
   .cs-cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2.25rem;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent2) 100%);
-    color: white;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
+    gap: 0.6rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink);
     text-decoration: none;
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow:
-      0 4px 0 #cc5a1a,
-      0 8px 20px rgba(255, 107, 53, 0.3),
-      inset 0 2px 4px rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
   }
 
   .cs-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 6px 0 #cc5a1a,
-      0 12px 30px rgba(255, 107, 53, 0.4),
-      inset 0 2px 4px rgba(255, 255, 255, 0.15);
+    color: var(--accent);
+    border-color: var(--accent);
   }
 
-  .cs-cta-btn:active {
-    transform: translateY(2px);
-    box-shadow:
-      0 1px 0 #cc5a1a,
-      0 4px 10px rgba(255, 107, 53, 0.3);
+  .cs-cta-arrow {
+    transition: transform 0.3s ease;
   }
 
-  /* ===== Scroll Reveal ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  .cs-cta-btn:hover .cs-cta-arrow {
+    transform: translateX(4px);
   }
 
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== Mobile ===== */
-  @media (max-width: 768px) {
-    .cs-hero {
-      padding: 6rem 1.5rem 3rem;
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .cs-cover {
+      padding: 3rem 1.5rem 3rem;
     }
 
     .cs-section {
-      padding: 2.5rem 0;
+      padding: 3rem 1.5rem;
     }
 
-    .cs-card {
-      padding: 1.25rem;
+    .cs-section-head,
+    .cs-section-body {
+      grid-template-columns: 60px 1fr;
+      gap: 1.25rem;
     }
 
-    .cs-highlights {
+    .cs-quick-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .cs-page {
+      padding-top: 70px;
+    }
+
+    .cs-cover {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .cs-meta-rule { width: 20px; }
+    .cs-meta-label { font-size: 0.7rem; }
+
+    .cs-section {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .cs-section-head {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .cs-section-body {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .cs-toc {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .cs-def-row {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      padding: 1rem 0;
+    }
+
+    .cs-step {
+      grid-template-columns: 50px 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+    }
+
+    .cs-step-number {
+      font-size: 1.4rem;
+    }
+
+    .cs-cheer-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
     }
 
-    .cs-feature-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .cs-quick-steps {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .cs-quick-step {
-      max-width: none;
-    }
-
-    .cs-quick-arrow {
-      display: none;
-    }
-
-    .cs-toc-list {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cs-hero {
-      padding: 5rem 1rem 2.5rem;
-    }
-
-    .cs-body {
-      padding: 0 0.75rem;
-    }
-
-    .cs-step {
-      padding: 1rem;
-      gap: 0.75rem;
-    }
-
-    .cs-step-number {
-      width: 32px;
-      height: 32px;
-      font-size: 0.9rem;
-    }
-
-    .cs-cheer-item {
-      padding: 0.85rem 1rem;
-    }
-
-    .cs-accordion-trigger {
-      padding: 0.85rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .cs-accordion-body {
-      padding: 0 1rem 1rem;
+    .cs-cheer-tags {
+      grid-row: auto;
+      grid-column: 1;
     }
   }
 </style>
-
-<script>
-  import '../scripts/reveal.ts';
-</script>

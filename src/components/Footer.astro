@@ -2,37 +2,64 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="modern-footer">
-  <p>&copy; {year} きゃる🥕👑. All rights reserved.</p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-rule"></div>
+    <div class="footer-content">
+      <span class="footer-mark">KYARU</span>
+      <span class="footer-meta">© {year} きゃる — All rights reserved.</span>
+    </div>
+  </div>
 </footer>
 
 <style>
-  .modern-footer {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: var(--color-bg-alt3);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
-    position: relative;
-    overflow: hidden;
+  .site-footer {
+    padding: 3rem 2rem 2.5rem;
+    background: var(--paper);
   }
 
-  .modern-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .footer-rule {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 140, 66, 0.5), transparent);
+    background: var(--rule);
+    margin-bottom: 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-mark {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+  }
+
+  .footer-meta {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
   }
 
   @media (max-width: 480px) {
-    .modern-footer {
-      padding: 2rem 1rem;
-      font-size: 0.8rem;
+    .site-footer {
+      padding: 2.5rem 1.25rem 2rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
 </style>

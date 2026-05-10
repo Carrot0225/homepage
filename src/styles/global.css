@@ -11,31 +11,38 @@ html {
 }
 
 :root {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  --font-heading: 'Outfit', sans-serif;
-  --font-accent: 'Zen Kurenaido', sans-serif;
-  line-height: 1.6;
+  /* === Typography === */
+  --font-serif: 'Cormorant Garamond', 'Shippori Mincho B1', serif;
+  --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+  --font-mincho: 'Shippori Mincho B1', serif;
+
+  font-family: var(--font-sans);
+  line-height: 1.7;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.92);
+  font-feature-settings: 'palt' 1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Warm Dark Palette */
-  --color-bg: #0d0a07;
-  --color-bg-alt: #12100d;
-  --color-bg-alt2: #0f0d0a;
-  --color-bg-alt3: #080604;
-  --color-accent: #ff8c42;
-  --color-accent2: #ff6b35;
-  --color-warm: #d4a574;
-  --color-cream: #f5e6d0;
-  --color-text: #f5f5f7;
-  --color-text-muted: #b0a89e;
-  --color-border: rgba(255, 180, 100, 0.08);
+  /* === Colors — Nostalgic Paper Palette === */
+  --paper:        #f5efe4;
+  --paper-soft:   #ede4d3;
+  --paper-warm:   #f8f3eb;
+  --paper-deep:   #e8dcc4;
 
-  background-color: var(--color-bg);
+  --ink:          #1f1a14;
+  --ink-soft:     #4a4036;
+  --ink-mute:     #8b7d6b;
+
+  --accent:       #b8593a;
+  --accent-soft:  #d4a574;
+
+  --rule:         rgba(31, 26, 20, 0.18);
+  --rule-soft:    rgba(31, 26, 20, 0.08);
+
+  color: var(--ink);
+  background-color: var(--paper);
 }
 
 body {
@@ -45,29 +52,35 @@ body {
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  background: var(--paper);
+  color: var(--ink);
 }
 
-/* Grain Texture Overlay */
+/* Subtle paper grain — keep it whisper-light */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9998;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
+  opacity: 1;
+  mix-blend-mode: multiply;
 }
 
 ::selection {
-  background: rgba(255, 140, 66, 0.3);
-  color: #fff;
+  background: rgba(184, 89, 58, 0.18);
+  color: var(--ink);
 }
 
-/* Scroll Reveal — JS-enhanced only */
+a {
+  color: inherit;
+}
+
+/* Scroll Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(24px);
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -76,7 +89,6 @@ body::after {
   transform: translateY(0);
 }
 
-/* Fallback: show content when JS is disabled */
 @media (scripting: none) {
   .reveal {
     opacity: 1;
@@ -84,21 +96,21 @@ body::after {
   }
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-alt2);
+  background: var(--paper-soft);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a3f35;
+  background: var(--paper-deep);
   border-radius: 5px;
-  border: 2px solid var(--color-bg-alt2);
+  border: 2px solid var(--paper-soft);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b5d4f;
+  background: var(--ink-mute);
 }

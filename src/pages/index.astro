@@ -5,67 +5,72 @@ import '../styles/home.css';
 
 <Layout>
   <div class="home">
-    <!-- Hero Section with Profile Icon -->
-    <header class="hero-section">
-      <div class="hero-background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-      </div>
 
-      <div class="hero-content">
-        <div class="hero-text-content">
-          <h1 class="hero-title">きゃる</h1>
-          <p class="hero-subtitle">歌い手 × 歌ってみたMIX</p>
-          <p class="hero-tagline">音楽で繋がる、心に響く歌声を</p>
-          <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="hero-cta">
-            <span>Contact Me</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
+    <!-- ===== Hero / Cover ===== -->
+    <header class="cover">
+      <div class="cover-grid">
+        <div class="cover-text">
+          <div class="cover-meta">
+            <span class="meta-num">№ 001</span>
+            <span class="meta-divider"></span>
+            <span class="meta-label">Singer · Mix Engineer</span>
+          </div>
+
+          <h1 class="cover-title">
+            <span class="cover-en">KYARU</span>
+            <span class="cover-ja">きゃる</span>
+          </h1>
+
+          <p class="cover-tagline">
+            歌い手として、ミックスエンジニアとして。<br />
+            言葉と声で、その人らしい音を仕立てる。
+          </p>
+
+          <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="cover-cta">
+            <span>Contact</span>
+            <span class="cta-line"></span>
           </a>
         </div>
 
-        <div class="profile-icon-wrapper">
+        <figure class="cover-figure">
           <img
             src="/photos/profile-main.png"
-            alt="きゃる プロフィール"
-            class="profile-icon"
-            role="button"
-            tabindex="0"
-            aria-label="プロフィールアイコン — クリックでメッセージ表示"
+            alt="きゃる"
+            class="cover-photo"
           />
-        </div>
-      </div>
-
-      <div class="scroll-indicator">
-        <div class="mouse"></div>
+          <figcaption class="cover-caption">Photograph — きゃる</figcaption>
+        </figure>
       </div>
     </header>
 
-    <!-- About Section -->
-    <section class="about-section reveal">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">About</span>
-          <h2 class="section-title">音楽への想い</h2>
-        </div>
-        <p class="about-text">
-          歌い手として活動している、きゃる🥕👑です。
-          YouTubeでの歌ってみた動画投稿や、ColorSing、Topiaなどの配信プラットフォームで活動しています。
-          また、歌ってみたのセルフミックスも行っています。少しずつ依頼もいただいております。MIX依頼についてはMIXについてのページをご覧ください。
+    <!-- ===== About ===== -->
+    <section class="page-section reveal">
+      <header class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About</h2>
+      </header>
+
+      <div class="section-body about-body">
+        <p class="lead">
+          歌い手として活動している、きゃるです。
         </p>
+        <p>
+          YouTubeでの歌ってみた動画投稿のほか、ColorSing・Topiaなどの配信プラットフォームで活動。
+          歌ってみたのセルフミックスも手がけており、ご依頼も少しずついただいています。
+        </p>
+        <p class="signature">— きゃる</p>
       </div>
     </section>
 
-    <!-- YouTube Section -->
-    <section class="videos-section-modern reveal">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">YouTube</span>
-          <h2 class="section-title">YouTube</h2>
-        </div>
-        <div class="video-container-modern">
+    <!-- ===== Latest Video ===== -->
+    <section class="page-section reveal">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Latest Recording</h2>
+      </header>
+
+      <div class="section-body">
+        <div class="video-frame">
           <iframe
             src="https://www.youtube.com/embed/oUo-AYvWA0Y?si=97sgSv4IrGDtvBri"
             title="きゃる 歌ってみた動画"
@@ -76,138 +81,119 @@ import '../styles/home.css';
             allowfullscreen
           ></iframe>
         </div>
-        <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer" class="link-button">
-          YouTubeチャンネルを見る
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
+        <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer" class="text-link">
+          チャンネルへ →
         </a>
       </div>
     </section>
 
-    <!-- Activities Section -->
-    <section class="activities-section reveal">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">Activities</span>
-          <h2 class="section-title">活動内容</h2>
-        </div>
-        <div class="activities-grid">
-          <div class="activity-card">
-            <div class="activity-icon">🎤</div>
-            <h3>歌ってみた</h3>
-            <p>様々な楽曲をカバーし、YouTubeやSNSで発信しています。</p>
-          </div>
-          <div class="activity-card">
-            <div class="activity-icon">🎵</div>
-            <h3>配信活動</h3>
-            <p>ColorSing、Topiaなどの配信プラットフォームで歌配信を行っています。</p>
-          </div>
-          <div class="activity-card">
-            <div class="activity-icon">🎧</div>
-            <h3>MIX制作</h3>
-            <p>歌ってみた動画の音源MIX・マスタリングを承っています。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ===== Activities ===== -->
+    <section class="page-section reveal">
+      <header class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Activities</h2>
+      </header>
 
-    <!-- Platforms Section -->
-    <section class="platforms-section reveal">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">Platforms</span>
-          <h2 class="section-title">活動プラットフォーム</h2>
-        </div>
-        <div class="platforms-list">
-          <span class="platform-badge">YouTube</span>
-          <span class="platform-badge">ColorSing</span>
-          <span class="platform-badge">Topia</span>
-          <span class="platform-badge">X (Twitter)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Links Section -->
-    <section class="links-section-modern reveal">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">Connect</span>
-          <h2 class="section-title">SNS & Links</h2>
-        </div>
-        <div class="social-grid">
-          <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="social-card">
-            <span class="social-icon">𝕏</span>
-            <span class="social-name">X (Twitter)</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
-          <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer" class="social-card">
-            <span class="social-icon">▶️</span>
-            <span class="social-name">YouTube</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
-          <a href="https://web.colorsing.com/share/live?live_id=2d0a51ab-7078-4853-9864-5078fbb9ebab" target="_blank" rel="noopener noreferrer" class="social-card">
-            <span class="social-icon">🎵</span>
-            <span class="social-name">ColorSing</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
-          <a href="https://discord.gg/qF7c6PfgJw" target="_blank" rel="noopener noreferrer" class="social-card social-card--discord">
-            <span class="social-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-              </svg>
-            </span>
-            <div class="social-card-text">
-              <span class="social-name">Discord</span>
-              <span class="social-desc">きゃるのサーバー</span>
+      <div class="section-body">
+        <ol class="entry-list">
+          <li class="entry">
+            <span class="entry-num">i.</span>
+            <div class="entry-text">
+              <h3>歌ってみた</h3>
+              <p>様々な楽曲をカバーし、YouTubeやSNSで発信。</p>
             </div>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
-          <a href="https://topia.tv/p/NvZQC" target="_blank" rel="noopener noreferrer" class="social-card">
-            <span class="social-icon">🌐</span>
-            <span class="social-name">Topia</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </a>
-        </div>
+          </li>
+          <li class="entry">
+            <span class="entry-num">ii.</span>
+            <div class="entry-text">
+              <h3>配信活動</h3>
+              <p>ColorSing、Topiaなどの配信プラットフォームで歌配信。</p>
+            </div>
+          </li>
+          <li class="entry">
+            <span class="entry-num">iii.</span>
+            <div class="entry-text">
+              <h3>MIX制作</h3>
+              <p>歌ってみた動画の音源MIX・マスタリングを承っています。</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
+
+    <!-- ===== Platforms ===== -->
+    <section class="page-section reveal">
+      <header class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Platforms</h2>
+      </header>
+
+      <div class="section-body">
+        <p class="platform-line">
+          YouTube ／ ColorSing ／ Topia ／ X
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Links ===== -->
+    <section class="page-section reveal">
+      <header class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Connect</h2>
+      </header>
+
+      <div class="section-body">
+        <ul class="link-list">
+          <li>
+            <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer">
+              <span class="link-name">X (Twitter)</span>
+              <span class="link-handle">@carrot_tpa</span>
+              <span class="link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@carrot_singer" target="_blank" rel="noopener noreferrer">
+              <span class="link-name">YouTube</span>
+              <span class="link-handle">@carrot_singer</span>
+              <span class="link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://web.colorsing.com/share/live?live_id=2d0a51ab-7078-4853-9864-5078fbb9ebab" target="_blank" rel="noopener noreferrer">
+              <span class="link-name">ColorSing</span>
+              <span class="link-handle">Live Room</span>
+              <span class="link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://topia.tv/p/NvZQC" target="_blank" rel="noopener noreferrer">
+              <span class="link-name">Topia</span>
+              <span class="link-handle">Profile</span>
+              <span class="link-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/qF7c6PfgJw" target="_blank" rel="noopener noreferrer">
+              <span class="link-name">Discord</span>
+              <span class="link-handle">きゃるのサーバー</span>
+              <span class="link-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
   </div>
 </Layout>
 
 <script>
-  // Mouse tracking for gradient orbs
-  window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 2;
-    const y = (e.clientY / window.innerHeight - 0.5) * 2;
-    document.documentElement.style.setProperty('--mouse-x', x.toString());
-    document.documentElement.style.setProperty('--mouse-y', y.toString());
-  });
-
-  // Parallax scroll
-  const heroBackground = document.querySelector('.hero-background') as HTMLElement | null;
-  if (heroBackground) {
-    window.addEventListener('scroll', () => {
-      heroBackground.style.transform = `translateY(${window.scrollY * 0.5}px)`;
-    });
-  }
-
   // Scroll Reveal — shared module
   import('../scripts/reveal.ts');
 
   // Music notes animation
   function createMusicNotes() {
-    const notes = ['♪', '♫', '♬', '♩', '♭', '♯'];
-    const numberOfNotes = 15;
+    const notes = ['♪', '♫', '♬', '♩'];
+    const numberOfNotes = 10;
 
     for (let i = 0; i < numberOfNotes; i++) {
       setTimeout(() => {
@@ -222,14 +208,9 @@ import '../styles/home.css';
         const duration = 2 + Math.random() * 2;
         note.style.animationDuration = `${duration}s`;
 
-        const hue = 20 + Math.random() * 20;
-        note.style.color = `hsl(${hue}, 100%, 60%)`;
-
         document.body.appendChild(note);
 
-        setTimeout(() => {
-          note.remove();
-        }, duration * 1000);
+        setTimeout(() => note.remove(), duration * 1000);
       }, i * 100);
     }
   }
@@ -262,9 +243,7 @@ import '../styles/home.css';
 
         setTimeout(() => {
           bubble.classList.add('fade-out');
-          setTimeout(() => {
-            bubble.remove();
-          }, 500);
+          setTimeout(() => bubble.remove(), 500);
         }, 5000);
       }
     } catch (error) {
@@ -272,16 +251,6 @@ import '../styles/home.css';
     }
   }
 
-  const profileIcon = document.querySelector('.profile-icon');
+  const profileIcon = document.querySelector('.cover-photo');
   profileIcon?.addEventListener('click', handleProfileClick);
-  profileIcon?.addEventListener('keydown', (e) => {
-    if (e instanceof KeyboardEvent && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault();
-      handleProfileClick(e);
-    }
-  });
-  profileIcon?.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    handleProfileClick(e);
-  });
 </script>

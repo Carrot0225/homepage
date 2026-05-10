@@ -3,212 +3,210 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="MIX・マスタリング依頼 | きゃるのページ">
-  <div class="mix-page">
-    <!-- Hero -->
-    <div class="mix-hero">
-      <div class="mix-hero-content">
-        <h1 class="mix-hero-title">MIX・マスタリング</h1>
-        <p class="mix-hero-subtitle">Vocal MIX Service</p>
+  <article class="mix-page">
+
+    <!-- ===== Cover ===== -->
+    <header class="mix-cover">
+      <div class="cover-meta">
+        <span class="meta-num">№ 002</span>
+        <span class="meta-divider"></span>
+        <span class="meta-label">Vocal Mix Service</span>
       </div>
-    </div>
+      <h1 class="mix-cover-title">
+        <span class="title-en">Mixing &amp; Mastering</span>
+        <span class="title-ja">歌ってみたMIX</span>
+      </h1>
+      <p class="mix-lede">
+        歌い手だからこそできる、"歌心"を活かしたMIX。<br />
+        あなたらしさを残した自然な仕上がりで、声の魅力を引き出します。
+      </p>
+    </header>
 
-    <!-- Main Content -->
     <div class="mix-body">
-      <div class="mix-container">
 
-        <!-- サービス概要 -->
-        <section class="mix-section reveal">
-          <div class="section-label-bg">Service</div>
-          <h2 class="mix-section-title">サービス概要</h2>
-          <div class="service-card">
-            <p class="service-description">
-              歌い手だからこそできる、<strong>"歌心"を活かしたMIX</strong>をお届けします。
-              幼少期からの音楽経験と、自身も歌い手として活動する耳で、あなたの歌声の魅力を最大限に引き出します。
-            </p>
-            <div class="service-details">
-              <div class="detail-item">
-                <span class="detail-icon">🎛️</span>
-                <div>
-                  <h3>使用環境</h3>
-                  <p>Logic Pro と Waves / iZotope / FabFilter などの外部プラグインを使用</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <span class="detail-icon">🎚️</span>
-                <div>
-                  <h3>トータルサポート</h3>
-                  <p>ミキシングからマスタリングまで一貫して対応</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <span class="detail-icon">🎤</span>
-                <div>
-                  <h3>自然なピッチ補正</h3>
-                  <p>機械的に音程を合わせるのではなく、歌の表現やニュアンスを理解した上で補正するため、あなたらしさを残した自然な仕上がりになります</p>
-                </div>
-              </div>
+      <!-- ===== Service ===== -->
+      <section class="mix-section reveal">
+        <header class="section-head">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Service</h2>
+        </header>
+        <div class="section-body">
+          <p class="service-intro">
+            歌い手として活動する出品者が、ボーカルMIX一連の作業を一貫してお引き受けします。
+            機械的に音程を合わせるのではなく、歌の表現やニュアンスを理解した上で補正するため、自然な仕上がりになります。
+          </p>
+
+          <dl class="def-list">
+            <div class="def-row">
+              <dt>使用環境</dt>
+              <dd>Logic Pro／Waves・iZotope・FabFilter ほか外部プラグインを使用</dd>
             </div>
-          </div>
-        </section>
-
-        <!-- 料金 -->
-        <section class="mix-section reveal">
-          <div class="section-label-bg">Price</div>
-          <h2 class="mix-section-title">料金体系</h2>
-
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <span class="pricing-label">基本プラン</span>
-              <div class="pricing-amount">
-                <span class="yen">¥</span><span class="price">7,000</span>
-              </div>
-              <span class="pricing-note">4分30秒以内の楽曲</span>
+            <div class="def-row">
+              <dt>対応範囲</dt>
+              <dd>ミキシングからマスタリングまで一貫対応</dd>
             </div>
-            <ul class="pricing-features">
+            <div class="def-row">
+              <dt>ピッチ補正</dt>
+              <dd>歌の表現を損なわない、"直しました感"のない自然な補正</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== Price ===== -->
+      <section class="mix-section reveal">
+        <header class="section-head">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Price</h2>
+        </header>
+        <div class="section-body">
+
+          <div class="price-block">
+            <div class="price-label">Basic Plan — 4'30" 以内の楽曲</div>
+            <div class="price-amount">
+              <span class="price-currency">¥</span>
+              <span class="price-figure">7,000</span>
+            </div>
+            <ul class="price-includes">
               <li>MIX＆マスタリング（1曲）</li>
               <li>基本エフェクト処理（EQ・コンプレッション・リバーブ等）</li>
-              <li>ノイズ除去</li>
-              <li>音量バランス調整</li>
-              <li>ピッチ補正</li>
-              <li>タイミング補正</li>
+              <li>ノイズ除去 ／ 音量バランス調整</li>
+              <li>ピッチ補正 ／ タイミング補正</li>
               <li>簡単なハモリ・コーラスMIX（複雑な場合は別途相談）</li>
             </ul>
           </div>
 
-          <div class="options-grid">
-            <div class="option-card">
-              <h3>ハモリ・コーラスパートの追加MIX</h3>
-              <p class="option-price"><strong>要相談（個別見積もり）</strong></p>
-              <p class="option-example">簡単なハモリは基本料金に含まれます</p>
+          <div class="price-options">
+            <div class="option-row">
+              <div class="option-label">
+                <h3>ハモリ・コーラスパートの追加MIX</h3>
+                <p>簡単なハモリは基本料金に含まれます</p>
+              </div>
+              <div class="option-value">要相談</div>
             </div>
-            <div class="option-card">
-              <h3>4分30秒を超える楽曲</h3>
-              <p class="option-price">30秒ごとに <strong>+¥500</strong></p>
-              <p class="option-example">例：+30秒で¥500、+1分で¥1,000</p>
-            </div>
-          </div>
-
-          <div class="pricing-summary">
-            <p>4分30秒以内の楽曲なら<strong>7,000円</strong>で一通りのMIX作業が完結。4分30秒超は<strong>30秒ごとに¥500</strong>の追加料金が発生します。楽曲の長さやパート数によっては事前にお見積もりいたします。</p>
-          </div>
-        </section>
-
-        <!-- ご依頼の条件 -->
-        <section class="mix-section reveal">
-          <div class="section-label-bg">Info</div>
-          <h2 class="mix-section-title">ご依頼について</h2>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <span class="info-icon">📅</span>
-              <h3>納期</h3>
-              <p>5〜7営業日<span class="info-sub">（目安7日）</span></p>
-            </div>
-            <div class="info-card">
-              <span class="info-icon">🔄</span>
-              <h3>無料修正回数</h3>
-              <p>4回<span class="info-sub">（5回目以降 +¥500/回）</span></p>
-            </div>
-            <div class="info-card">
-              <span class="info-icon">🎵</span>
-              <h3>対応ジャンル</h3>
-              <p>ポップ、ロック、バラード、アニメ、ボカロ</p>
-            </div>
-            <div class="info-card">
-              <span class="info-icon">📁</span>
-              <h3>ファイル形式</h3>
-              <p>WAV（44.1kHz/16bit以上）推奨<span class="info-sub">（MP3でも対応可能）</span></p>
+            <div class="option-row">
+              <div class="option-label">
+                <h3>4'30" を超える楽曲</h3>
+                <p>例：+30秒で¥500、+1分で¥1,000</p>
+              </div>
+              <div class="option-value">+¥500 <span>/ 30秒</span></div>
             </div>
           </div>
 
-          <div class="notice-card">
+          <p class="price-note">
+            * 楽曲の長さやパート数によっては追加料金が発生します。事前にお見積もりいたします。
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== Info ===== -->
+      <section class="mix-section reveal">
+        <header class="section-head">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Info</h2>
+        </header>
+        <div class="section-body">
+          <dl class="def-list">
+            <div class="def-row">
+              <dt>納期</dt>
+              <dd>5〜7営業日（目安7日）</dd>
+            </div>
+            <div class="def-row">
+              <dt>無料修正</dt>
+              <dd>4回まで（5回目以降は1回につき +¥500）</dd>
+            </div>
+            <div class="def-row">
+              <dt>対応ジャンル</dt>
+              <dd>ポップ／ロック／バラード／アニメ／ボカロ</dd>
+            </div>
+            <div class="def-row">
+              <dt>ファイル形式</dt>
+              <dd>WAV（44.1kHz / 16bit 以上）推奨。MP3でも対応可能</dd>
+            </div>
+          </dl>
+
+          <div class="notice">
             <h3>購入前のお願い</h3>
-            <ul class="notice-list">
+            <ul>
               <li>ご購入前に必ず<strong>DMでご相談</strong>ください。音源と歌声データをお送りいただき、仕上がりのご希望をお伺いします。</li>
-              <li>ファイル形式はWAV（44.1kHz/16bit以上）を推奨します。MP3でも対応可能ですが、音質に影響が出る場合があります。</li>
+              <li>ファイル形式はWAV（44.1kHz/16bit以上）を推奨。MP3でも対応可能ですが、音質に影響が出る場合があります。</li>
               <li>楽曲の長さやパート数によっては追加料金が発生します。事前にお見積もりいたします。</li>
             </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- 納品までの流れ -->
-        <section class="mix-section reveal">
-          <div class="section-label-bg">Flow</div>
-          <h2 class="mix-section-title">納品までの流れ</h2>
-
-          <ol class="flow-list">
-            <li class="flow-item">
-              <div class="flow-step">01</div>
-              <div class="flow-content">
+      <!-- ===== Flow ===== -->
+      <section class="mix-section reveal">
+        <header class="section-head">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Flow</h2>
+        </header>
+        <div class="section-body">
+          <ol class="flow">
+            <li class="flow-step">
+              <span class="flow-num">01</span>
+              <div class="flow-text">
                 <h3>ご相談・ヒアリング</h3>
                 <p>仕上がりイメージや参考楽曲をお伺いします。</p>
               </div>
             </li>
-            <li class="flow-item">
-              <div class="flow-step">02</div>
-              <div class="flow-content">
+            <li class="flow-step">
+              <span class="flow-num">02</span>
+              <div class="flow-text">
                 <h3>データ送付</h3>
                 <p>ボーカルトラック・伴奏データをお送りください。</p>
               </div>
             </li>
-            <li class="flow-item">
-              <div class="flow-step">03</div>
-              <div class="flow-content">
+            <li class="flow-step">
+              <span class="flow-num">03</span>
+              <div class="flow-text">
                 <h3>MIX・マスタリング作業</h3>
                 <p>いただいたデータをもとに作業を進めます。</p>
               </div>
             </li>
-            <li class="flow-item">
-              <div class="flow-step">04</div>
-              <div class="flow-content">
+            <li class="flow-step">
+              <span class="flow-num">04</span>
+              <div class="flow-text">
                 <h3>プレビュー提出</h3>
                 <p>仮MIXをお送りします。修正のご希望があれば対応します。</p>
               </div>
             </li>
-            <li class="flow-item">
-              <div class="flow-step">05</div>
-              <div class="flow-content">
+            <li class="flow-step">
+              <span class="flow-num">05</span>
+              <div class="flow-text">
                 <h3>最終納品</h3>
                 <p>修正を反映し、完成版を納品いたします。</p>
               </div>
             </li>
           </ol>
-        </section>
+        </div>
+      </section>
 
-        <!-- CTA -->
-        <section class="mix-section cta-section reveal">
-          <h2 class="cta-heading">まずはお気軽にご相談ください</h2>
-          <p class="cta-text">DMにて音源の確認・ご希望のヒアリングを行います</p>
-          <div class="cta-buttons">
-            <a
-              href="https://x.com/carrot_tpa"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button"
-            >
-              <span class="cta-icon">𝕏</span>
-              <span>DMで相談する</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+      <!-- ===== CTA ===== -->
+      <section class="mix-section cta-section reveal">
+        <header class="section-head">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Contact</h2>
+        </header>
+        <div class="section-body">
+          <p class="cta-text">
+            まずはDMにて音源の確認・ご希望のヒアリングを行います。
+          </p>
+          <div class="cta-row">
+            <a href="https://x.com/carrot_tpa" target="_blank" rel="noopener noreferrer" class="cta-link">
+              DMで相談する <span class="cta-arrow">→</span>
             </a>
-            <a
-              href="https://coconala.com/services/3206932"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button cta-button--secondary"
-            >
-              <span>Coconalaで購入する</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+            <span class="cta-sep">／</span>
+            <a href="https://coconala.com/services/3206932" target="_blank" rel="noopener noreferrer" class="cta-link cta-link--soft">
+              Coconalaで購入 <span class="cta-arrow">→</span>
             </a>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
     </div>
-  </div>
+  </article>
 </Layout>
 
 <script>
@@ -218,731 +216,513 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* ===== Page Base ===== */
   .mix-page {
+    background: var(--paper);
+    color: var(--ink);
     min-height: 100vh;
-    background: var(--color-bg);
-    color: var(--color-text);
+    padding-top: 80px;
   }
 
-  /* ===== Hero ===== */
-  .mix-hero {
-    min-height: 50vh;
+  /* ===== Cover ===== */
+  .mix-cover {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cover-meta {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: radial-gradient(ellipse at 50% 50%, #1a1510 0%, var(--color-bg) 100%);
-    position: relative;
-    overflow: hidden;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
   }
 
-  .mix-hero::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: float 8s ease-in-out infinite;
+  .meta-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-mute);
   }
 
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, -30px); }
+  .meta-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--rule);
   }
 
-  .mix-hero-content {
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    animation: fadeInUp 1s ease-out;
+  .meta-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
   }
 
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  .mix-cover-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    line-height: 1;
   }
 
-  .mix-hero-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.03em;
+  .title-en {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
   }
 
-  .mix-hero-subtitle {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 300;
-    color: var(--color-text-muted);
-    letter-spacing: 0.05em;
+  .title-ja {
+    font-family: var(--font-mincho);
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 500;
+    color: var(--ink-mute);
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+  }
+
+  .mix-lede {
+    font-family: var(--font-mincho);
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--ink-soft);
+    max-width: 36em;
   }
 
   /* ===== Body ===== */
   .mix-body {
-    padding: 4rem 2rem;
-    background: var(--color-bg-alt2);
-  }
-
-  .mix-container {
-    max-width: 900px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
-  /* ===== Section ===== */
   .mix-section {
-    margin-bottom: 5rem;
-    position: relative;
+    padding: 4.5rem 2rem;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .section-label-bg {
-    font-size: 6rem;
-    font-weight: 900;
-    color: rgba(255, 180, 100, 0.04);
-    text-transform: uppercase;
-    line-height: 1;
-    pointer-events: none;
-    font-family: var(--font-heading);
-    margin-bottom: -2rem;
-  }
-
-  .mix-section-title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  .mix-section-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 70%;
-    background: var(--color-accent);
-    border-radius: 2px;
-  }
-
-  /* ===== Service Card ===== */
-  .service-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
-    box-shadow:
-      0 4px 0 rgba(13, 10, 7, 0.5),
-      0 8px 25px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .service-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color-text-muted);
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .service-description strong {
-    color: var(--color-text);
-  }
-
-  .service-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .detail-item {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    padding: 1.25rem;
-    background: rgba(255, 180, 100, 0.02);
-    border-radius: 14px;
-    border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
-  }
-
-  .detail-item:hover {
-    background: rgba(255, 140, 66, 0.05);
-    border-color: rgba(255, 140, 66, 0.2);
-  }
-
-  .detail-icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-
-  .detail-item h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 0.3rem;
-  }
-
-  .detail-item p {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-  }
-
-  /* ===== Pricing ===== */
-  .pricing-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 2px solid rgba(255, 140, 66, 0.3);
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    box-shadow:
-      0 4px 0 rgba(13, 10, 7, 0.5),
-      0 8px 25px rgba(0, 0, 0, 0.3),
-      0 0 40px rgba(255, 140, 66, 0.08),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .pricing-header {
-    text-align: center;
-    padding: 2.5rem 2rem 2rem;
-    background: linear-gradient(180deg, rgba(255, 140, 66, 0.08) 0%, transparent 100%);
-  }
-
-  .pricing-label {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent2) 100%);
-    color: #fff;
-    padding: 0.35rem 1.25rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-  }
-
-  .pricing-amount {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .yen {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-accent);
-  }
-
-  .price {
-    font-size: 3.5rem;
-    font-weight: 800;
-    font-family: var(--font-heading);
-    color: var(--color-text);
-    letter-spacing: -0.03em;
-  }
-
-  .pricing-note {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-  }
-
-  .pricing-features {
-    list-style: none;
-    padding: 1.5rem 2rem 2rem;
-  }
-
-  .pricing-features li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .pricing-features li:last-child {
+  .mix-section:last-child {
     border-bottom: none;
   }
 
-  .pricing-features li::before {
-    content: '✓';
-    color: var(--color-accent);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* Options */
-  .options-grid {
+  .section-head {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
   }
 
-  .option-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 1.75rem;
-    transition: all 0.3s ease;
-    box-shadow:
-      0 3px 0 rgba(13, 10, 7, 0.4),
-      0 6px 15px rgba(0, 0, 0, 0.2),
-      inset 0 1px 2px rgba(255, 255, 255, 0.02);
-  }
-
-  .option-card:hover {
-    border-color: rgba(255, 140, 66, 0.2);
-    transform: translateY(-3px);
-    box-shadow:
-      0 6px 0 rgba(13, 10, 7, 0.3),
-      0 12px 25px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .option-card h3 {
+  .section-num {
+    font-family: var(--font-serif);
+    font-style: italic;
     font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 0.75rem;
+    color: var(--ink-mute);
   }
 
-  .option-price {
-    font-size: 1.1rem;
-    color: var(--color-text-muted);
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
   }
 
-  .option-price strong {
-    color: var(--color-accent);
-    font-size: 1.2rem;
-  }
-
-  .option-example {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    opacity: 0.7;
-    margin-top: 0.5rem;
-  }
-
-  .pricing-summary {
-    background: rgba(255, 140, 66, 0.05);
-    border: 1px solid rgba(255, 140, 66, 0.15);
-    border-radius: 14px;
-    padding: 1.5rem;
-  }
-
-  .pricing-summary p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    text-align: center;
-  }
-
-  .pricing-summary strong {
-    color: var(--color-accent);
-  }
-
-  /* ===== Info Grid ===== */
-  .info-grid {
+  .section-body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
   }
 
-  .info-card {
-    background: rgba(255, 180, 100, 0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 1.75rem 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow:
-      0 3px 0 rgba(13, 10, 7, 0.4),
-      0 6px 15px rgba(0, 0, 0, 0.2),
-      inset 0 1px 2px rgba(255, 255, 255, 0.02);
+  .section-body > * {
+    grid-column: 2;
   }
 
-  .info-card:hover {
-    border-color: rgba(255, 140, 66, 0.2);
-    transform: translateY(-3px);
-    box-shadow:
-      0 6px 0 rgba(13, 10, 7, 0.3),
-      0 12px 25px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .info-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-
-  .info-card h3 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .info-card p {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-    line-height: 1.5;
-  }
-
-  .info-sub {
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
-  }
-
-  /* Notice */
-  .notice-card {
-    background: rgba(255, 140, 66, 0.05);
-    border: 1px solid rgba(255, 140, 66, 0.2);
-    border-radius: 16px;
-    padding: 1.75rem;
-    text-align: center;
-  }
-
-  .notice-card h3 {
+  /* ===== Service Intro ===== */
+  .service-intro {
+    font-family: var(--font-mincho);
     font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+    max-width: 36em;
   }
 
-  .notice-card p {
+  /* ===== Definition List ===== */
+  .def-list {
+    border-top: 1px solid var(--rule);
+    margin-bottom: 2rem;
+  }
+
+  .def-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .def-row dt {
+    font-family: var(--font-serif);
+    font-style: italic;
     font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
   }
 
-  .notice-card strong {
-    color: var(--color-text);
+  .def-row dd {
+    font-family: var(--font-mincho);
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--ink);
   }
 
-  /* ===== Notice List ===== */
-  .notice-list {
+  /* ===== Price Block ===== */
+  .price-block {
+    padding: 2.5rem 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+
+  .price-label {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-currency {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+
+  .price-figure {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 9vw, 6.5rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .price-includes {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    text-align: left;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule-soft);
   }
 
-  .notice-list li {
+  .price-includes li {
+    font-family: var(--font-mincho);
     font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    padding-left: 1.5rem;
+    color: var(--ink-soft);
+    padding-left: 1.25rem;
     position: relative;
   }
 
-  .notice-list li::before {
-    content: '・';
+  .price-includes li::before {
+    content: '·';
     position: absolute;
     left: 0;
-    color: var(--color-accent);
+    color: var(--accent);
+    font-weight: 700;
   }
 
-  .notice-list li strong {
-    color: var(--color-text);
+  /* ===== Price Options ===== */
+  .price-options {
+    margin-bottom: 1.5rem;
   }
 
-  /* ===== Flow ===== */
-  .flow-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
+  .option-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+    align-items: center;
   }
 
-  .flow-list::before {
-    content: '';
-    position: absolute;
-    left: 2.25rem;
-    top: 3.5rem;
-    bottom: 3.5rem;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--color-accent), transparent);
-    opacity: 0.3;
+  .option-row:last-child {
+    border-bottom: 1px solid var(--rule);
   }
 
-  .flow-item {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1.5rem 1.75rem;
-    background: rgba(255, 180, 100, 0.02);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    box-shadow:
-      0 3px 0 rgba(13, 10, 7, 0.4),
-      0 6px 15px rgba(0, 0, 0, 0.15),
-      inset 0 1px 2px rgba(255, 255, 255, 0.02);
-  }
-
-  .flow-item:hover {
-    border-color: rgba(255, 140, 66, 0.2);
-    transform: translateX(4px);
-    box-shadow:
-      0 4px 0 rgba(13, 10, 7, 0.3),
-      0 8px 20px rgba(0, 0, 0, 0.2),
-      inset 0 1px 2px rgba(255, 255, 255, 0.03);
-  }
-
-  .flow-step {
-    font-size: 1.5rem;
-    font-weight: 800;
-    font-family: var(--font-heading);
-    color: var(--color-accent);
-    opacity: 0.7;
-    flex-shrink: 0;
-    width: 2.75rem;
-    line-height: 1;
-    padding-top: 0.2rem;
-  }
-
-  .flow-content h3 {
+  .option-label h3 {
+    font-family: var(--font-mincho);
     font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
+    font-weight: 500;
+    color: var(--ink);
     margin-bottom: 0.35rem;
   }
 
-  .flow-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
+  .option-label p {
+    font-family: var(--font-mincho);
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    line-height: 1.7;
+  }
+
+  .option-value {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .option-value span {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+
+  .price-note {
+    font-family: var(--font-mincho);
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    line-height: 1.85;
+    font-style: italic;
+  }
+
+  /* ===== Notice ===== */
+  .notice {
+    padding: 1.75rem 1.75rem;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--accent);
+    margin-top: 0.5rem;
+  }
+
+  .notice h3 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+  }
+
+  .notice ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .notice li {
+    font-family: var(--font-mincho);
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .notice li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .notice strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ===== Flow ===== */
+  .flow {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .flow-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--ink-mute);
+    line-height: 1;
+  }
+
+  .flow-text h3 {
+    font-family: var(--font-mincho);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .flow-text p {
+    font-family: var(--font-mincho);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
   }
 
   /* ===== CTA ===== */
-  .cta-section {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: rgba(255, 180, 100, 0.02);
-    border-radius: 24px;
-    border: 1px solid var(--color-border);
-  }
-
-  .cta-heading {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.75rem;
-  }
-
   .cta-text {
-    font-size: 1rem;
-    color: var(--color-text-muted);
+    font-family: var(--font-mincho);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
     margin-bottom: 2rem;
   }
 
-  .cta-button {
+  .cta-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+
+  .cta-link {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 2.5rem;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent2) 100%);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow:
-      0 4px 0 #cc5a1a,
-      0 8px 20px rgba(255, 140, 66, 0.3),
-      inset 0 2px 4px rgba(255, 255, 255, 0.15);
+    gap: 0.5rem;
   }
 
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 6px 0 #cc5a1a,
-      0 12px 30px rgba(255, 140, 66, 0.5),
-      inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  .cta-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
   }
 
-  .cta-button:active {
-    transform: translateY(2px);
-    box-shadow:
-      0 1px 0 #cc5a1a,
-      0 4px 10px rgba(255, 140, 66, 0.2),
-      inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  .cta-arrow {
+    transition: transform 0.3s ease;
   }
 
-  .cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+  .cta-link:hover .cta-arrow {
+    transform: translateX(4px);
   }
 
-  .cta-icon {
-    font-size: 1.5rem;
-    font-weight: 700;
+  .cta-link--soft {
+    color: var(--ink-soft);
+    border-bottom-color: var(--rule);
   }
 
-  .cta-button--secondary {
-    background: transparent;
-    border: 2px solid rgba(255, 140, 66, 0.5);
-    color: var(--color-accent);
-    box-shadow:
-      0 4px 0 rgba(13, 10, 7, 0.4),
-      0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .cta-button--secondary:hover {
-    background: rgba(255, 140, 66, 0.08);
-    border-color: var(--color-accent);
-    box-shadow:
-      0 6px 0 rgba(13, 10, 7, 0.3),
-      0 12px 30px rgba(255, 140, 66, 0.2);
-  }
-
-  .cta-button--secondary:active {
-    transform: translateY(2px);
-    box-shadow:
-      0 1px 0 rgba(13, 10, 7, 0.3),
-      0 4px 10px rgba(0, 0, 0, 0.15);
+  .cta-sep {
+    font-family: var(--font-serif);
+    color: var(--ink-mute);
   }
 
   /* ===== Responsive ===== */
-  @media (max-width: 768px) {
-    .mix-hero {
-      min-height: 40vh;
-    }
-
-    .mix-hero-content {
-      padding: 1.5rem;
-    }
-
-    .mix-hero-title {
-      font-size: 2.5rem;
-    }
-
-    .mix-hero-subtitle {
-      font-size: 1.5rem;
-    }
-
-    .mix-body {
-      padding: 3rem 1.5rem;
+  @media (max-width: 900px) {
+    .mix-cover {
+      padding: 3rem 1.5rem 3rem;
     }
 
     .mix-section {
-      margin-bottom: 4rem;
+      padding: 3.5rem 1.5rem;
     }
 
-    .section-label-bg {
-      font-size: 4rem;
-    }
-
-    .service-card {
-      padding: 2rem 1.5rem;
-    }
-
-    .pricing-header {
-      padding: 2rem 1.5rem 1.5rem;
-    }
-
-    .price {
-      font-size: 3rem;
-    }
-
-    .pricing-features {
-      padding: 1.25rem 1.5rem 1.5rem;
-    }
-
-    .options-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .info-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cta-section {
-      padding: 2.5rem 1.5rem;
-    }
-
-    .cta-button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
+    .section-head,
+    .section-body {
+      grid-template-columns: 60px 1fr;
+      gap: 1.25rem;
     }
   }
 
-  @media (max-width: 480px) {
-    .mix-hero-title {
-      font-size: 2rem;
+  @media (max-width: 560px) {
+    .mix-page {
+      padding-top: 70px;
     }
 
-    .mix-hero-subtitle {
-      font-size: 1.25rem;
+    .mix-cover {
+      padding: 2.5rem 1.25rem;
     }
 
-    .mix-body {
-      padding: 2rem 1rem;
+    .cover-meta {
+      margin-bottom: 1.5rem;
     }
 
-    .section-label-bg {
-      font-size: 3rem;
-    }
+    .meta-divider { width: 20px; }
+    .meta-label { font-size: 0.7rem; }
 
-    .mix-section-title {
-      font-size: 1.5rem;
-    }
-
-    .service-card {
-      padding: 1.5rem 1.25rem;
-    }
-
-    .detail-item {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.75rem;
-    }
-
-    .price {
-      font-size: 2.5rem;
-    }
-
-    .info-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .info-card {
-      padding: 1.25rem;
-    }
-
-
-
-    .cta-heading {
-      font-size: 1.3rem;
-    }
-
-    .cta-button {
-      padding: 0.875rem 1.5rem;
+    .mix-lede {
       font-size: 0.95rem;
+    }
+
+    .mix-section {
+      padding: 3rem 1.25rem;
+    }
+
+    .section-head {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-body {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .def-row {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      padding: 1.1rem 0;
+    }
+
+    .option-row {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+
+    .option-value {
+      font-size: 1.2rem;
+    }
+
+    .flow-step {
+      grid-template-columns: 50px 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+    }
+
+    .flow-num {
+      font-size: 1.4rem;
+    }
+
+    .cta-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.1rem;
+    }
+
+    .cta-sep {
+      display: none;
     }
   }
 </style>

@@ -5,24 +5,38 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) => currentPath === path || currentPath === path + '/';
 ---
 
-<nav class="navbar">
+<nav class="navbar" aria-label="メインナビゲーション">
   <div class="navbar-container">
-    <a href="/" class="navbar-logo">
-      <img src="/photos/profile-main.png" alt="きゃる" class="logo-icon" />
-      <span>きゃる</span>
+    <a href="/" class="navbar-logo" aria-label="ホームへ">
+      <span class="logo-mark">K</span>
+      <span class="logo-text">
+        <span class="logo-en">KYARU</span>
+        <span class="logo-ja">きゃる</span>
+      </span>
     </a>
 
     <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
       <span></span>
       <span></span>
-      <span></span>
     </button>
 
-    <div class="nav-menu" id="nav-menu" role="navigation">
-      <a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>HOME</a>
-<a href="/mix" class={`nav-link ${isActive('/mix') ? 'active' : ''}`}>MIXについて</a>
-      <a href="/gacha" class={`nav-link ${isActive('/gacha') ? 'active' : ''}`}>歌ガチャ</a>
-      <a href="/colorsing" class={`nav-link ${isActive('/colorsing') ? 'active' : ''}`}>ColorSingガイド</a>
+    <div class="nav-menu" id="nav-menu">
+      <a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>
+        <span class="nav-num">01</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="/mix" class={`nav-link ${isActive('/mix') ? 'active' : ''}`}>
+        <span class="nav-num">02</span>
+        <span class="nav-label">Mix</span>
+      </a>
+      <a href="/gacha" class={`nav-link ${isActive('/gacha') ? 'active' : ''}`}>
+        <span class="nav-num">03</span>
+        <span class="nav-label">Gacha</span>
+      </a>
+      <a href="/colorsing" class={`nav-link ${isActive('/colorsing') ? 'active' : ''}`}>
+        <span class="nav-num">04</span>
+        <span class="nav-label">ColorSing</span>
+      </a>
     </div>
   </div>
 
@@ -41,7 +55,6 @@ const isActive = (path: string) => currentPath === path || currentPath === path 
     hamburger?.setAttribute('aria-label', 'メニューを閉じる');
     navMenu?.classList.add('active');
     overlay?.classList.add('active');
-    // Focus first link
     (navLinks[0] as HTMLElement)?.focus();
   }
 
@@ -55,14 +68,10 @@ const isActive = (path: string) => currentPath === path || currentPath === path 
 
   hamburger?.addEventListener('click', () => {
     const isOpen = hamburger.classList.contains('active');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    if (isOpen) closeMenu();
+    else openMenu();
   });
 
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
       closeMenu();

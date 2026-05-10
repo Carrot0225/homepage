@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  hideNavbar?: boolean;
 }
 
 const {
   title = 'きゃるのページ',
   description = '歌い手きゃるの公式ページ - 歌ってみた動画、配信スケジュール、MIX依頼などの情報を掲載',
   ogImage = '/photos/profile-main.png',
+  hideNavbar = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://homepage-bno.pages.dev');
@@ -46,7 +48,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://homepage
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Kurenaido&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <Navbar />
+    {!hideNavbar && <Navbar />}
     <slot />
     <Footer />
   </body>

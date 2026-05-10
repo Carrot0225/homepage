@@ -682,6 +682,49 @@
   transform: translate(4px, -4px);
 }
 
+/* Discord card */
+.social-card--discord::before {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.15) 0%, rgba(88, 101, 242, 0.05) 100%);
+}
+
+.social-card--discord:hover {
+  border-color: rgba(88, 101, 242, 0.4);
+}
+
+.social-card--discord .social-icon {
+  color: #5865F2;
+  display: flex;
+  align-items: center;
+}
+
+.social-card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.social-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* No-link card */
+.social-card--no-link {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.social-card--no-link:hover {
+  transform: none;
+  border-color: var(--color-border);
+  box-shadow:
+    0 3px 0 rgba(13, 10, 7, 0.3),
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.02);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .section-container {

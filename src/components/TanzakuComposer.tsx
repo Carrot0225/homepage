@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import AutoFitText from './AutoFitText';
 
 /* ===== 色変換ユーティリティ ===== */
 interface Rgb { r: number; g: number; b: number; }
@@ -66,15 +67,24 @@ function readableInk(hex: string): string {
 /* ===== 短冊プレビュー ===== */
 function TanzakuCard({ color, wish, name }: { color: string; wish: string; name: string }) {
   const ink = readableInk(color);
+  const border = ink === '#241d14' ? 'rgba(36,29,20,0.25)' : 'rgba(251,244,230,0.35)';
   return (
     <div className="tz-card" style={{ background: color, color: ink }}>
       <span className="tz-card-hole" />
-      <div className="tz-card-wish" lang="ja">
-        {wish || 'ここに願い事が\n表示されます'}
-      </div>
-      <div className="tz-card-name" style={{ borderTopColor: ink === '#241d14' ? 'rgba(36,29,20,0.25)' : 'rgba(251,244,230,0.35)' }}>
-        {name || '名前'}
-      </div>
+      <AutoFitText
+        text={wish || 'ここに願い事が\n表示されます'}
+        max={18}
+        boxClassName="tz-card-wishbox"
+        textClassName="tz-card-wish"
+        lang="ja"
+      />
+      <AutoFitText
+        text={name || '名前'}
+        max={13}
+        boxClassName="tz-card-namebox"
+        textClassName="tz-card-name"
+        boxStyle={{ borderTopColor: border }}
+      />
     </div>
   );
 }

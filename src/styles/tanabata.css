@@ -98,12 +98,9 @@
 .tz-card {
   position: relative;
   width: 156px;
-  min-height: 320px;
-  padding: 2rem 0.9rem 1rem;
+  height: 340px;
   border-radius: 7px 7px 9px 9px;
   box-shadow: 0 14px 30px -14px rgba(31, 26, 20, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-  display: flex;
-  justify-content: center;
   transition: background 0.15s ease;
 }
 
@@ -119,33 +116,51 @@
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
+/* 願い事の収まり枠（この中に全文が収まるようフォント自動縮小） */
+.tz-card-wishbox {
+  position: absolute;
+  top: 32px;
+  left: 12px;
+  right: 12px;
+  bottom: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .tz-card-wish {
   writing-mode: vertical-rl;
-  text-orientation: upright;
   font-family: var(--font-mincho);
-  font-size: 1.05rem;
   line-height: 1.5;
   letter-spacing: 0.05em;
   white-space: pre-wrap;
-  max-height: 250px;
-  overflow: hidden;
   text-align: start;
   opacity: 0.96;
 }
 
-.tz-card-name {
+/* 名前（左下・全文表示） */
+.tz-card-namebox {
   position: absolute;
   left: 12px;
+  right: 12px;
   bottom: 12px;
-  max-width: 60%;
+  height: 28px;
   padding-top: 4px;
   border-top: 1px solid transparent;
-  font-family: var(--font-mincho);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.tz-card-name {
+  font-family: var(--font-mincho);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
   opacity: 0.92;
 }
 

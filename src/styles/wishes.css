@@ -133,16 +133,46 @@
 /* ===================================================================
    竹の情景
    =================================================================== */
-.wb-scene {
+/* --- ズーム／パンのステージ --- */
+.wb-stage {
   position: relative;
+  width: 100%;
+}
+
+.wb-viewport {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+  min-height: 360px;
+  max-height: 760px;
   overflow: hidden;
   border-radius: 16px;
-  padding: 2.5rem clamp(2.5rem, 8vw, 6rem) 3.5rem;
-  background:
-    radial-gradient(120% 80% at 50% -10%, rgba(120, 160, 110, 0.18), rgba(120, 160, 110, 0) 60%),
-    linear-gradient(180deg, #eef2e7 0%, var(--paper-warm) 55%, var(--paper) 100%);
   box-shadow: inset 0 0 0 1px var(--rule-soft);
-  min-height: 420px;
+  background:
+    radial-gradient(120% 70% at 50% -5%, rgba(120, 160, 110, 0.20), rgba(120, 160, 110, 0) 60%),
+    linear-gradient(180deg, #eef2e7 0%, var(--paper-warm) 55%, var(--paper) 100%);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  overscroll-behavior: contain;
+}
+
+.wb-viewport:active { cursor: grabbing; }
+
+.wb-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* --- 竹の情景（キャンバス内・件数に応じて広がる） --- */
+.wb-scene {
+  position: relative;
+  width: 720px;
+  padding: 3rem 92px 3.5rem;
 }
 
 /* --- 竹（左右の幹） --- */
@@ -159,8 +189,8 @@
   box-shadow: 0 0 18px -6px rgba(60, 90, 45, 0.5);
 }
 
-.wb-bamboo--left { left: clamp(0.6rem, 3vw, 2rem); border-radius: 8px; transform: rotate(-1.2deg); }
-.wb-bamboo--right { right: clamp(0.6rem, 3vw, 2rem); border-radius: 8px; transform: rotate(1.2deg); }
+.wb-bamboo--left { left: 26px; border-radius: 8px; transform: rotate(-1.2deg); }
+.wb-bamboo--right { right: 26px; border-radius: 8px; transform: rotate(1.2deg); }
 
 .wb-leaf {
   position: absolute;
@@ -234,12 +264,9 @@
 .wb-tanzaku {
   position: relative;
   width: 104px;
-  min-height: 210px;
-  padding: 1.4rem 0.6rem 0.8rem;
+  height: 220px;
   border-radius: 5px 5px 7px 7px;
   box-shadow: 0 12px 22px -12px rgba(31, 26, 20, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
-  display: flex;
-  justify-content: center;
 }
 
 .wb-hole {
@@ -254,32 +281,103 @@
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
+.wb-wishbox {
+  position: absolute;
+  top: 22px;
+  left: 8px;
+  right: 8px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .wb-wish {
   writing-mode: vertical-rl;
   font-family: var(--font-mincho);
-  font-size: 0.9rem;
   line-height: 1.45;
   letter-spacing: 0.04em;
   white-space: pre-wrap;
-  max-height: 168px;
-  overflow: hidden;
+  text-align: start;
   opacity: 0.96;
 }
 
-.wb-name {
+.wb-namebox {
   position: absolute;
   left: 8px;
-  bottom: 9px;
-  max-width: 62%;
+  right: 8px;
+  bottom: 8px;
+  height: 26px;
   padding-top: 3px;
   border-top: 1px solid transparent;
-  font-family: var(--font-mincho);
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.wb-name {
+  font-family: var(--font-mincho);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
   opacity: 0.9;
+}
+
+/* ===================================================================
+   ズーム操作ボタン・操作ヒント
+   =================================================================== */
+.wb-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.wb-zoom-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: rgba(245, 239, 228, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--ink);
+  font-family: var(--font-mincho);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 14px -6px rgba(31, 26, 20, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.wb-zoom-btn:hover { background: var(--paper-warm); }
+.wb-zoom-btn:active { transform: scale(0.94); }
+.wb-zoom-fit { font-size: 1rem; }
+
+.wb-hint {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 5;
+  margin: 0;
+  font-family: var(--font-mincho);
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  background: rgba(245, 239, 228, 0.72);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  pointer-events: none;
 }
 
 /* ===================================================================
@@ -307,7 +405,7 @@
 }
 
 @media (max-width: 560px) {
-  .wb-scene { padding: 2rem 2.5rem 3rem; }
-  .wb-tanzaku { width: 88px; min-height: 180px; }
-  .wb-wish { font-size: 0.8rem; max-height: 140px; }
+  .wb-viewport { height: 66vh; }
+  .wb-hint { font-size: 0.66rem; }
+  .wb-zoom-btn { width: 44px; height: 44px; }
 }

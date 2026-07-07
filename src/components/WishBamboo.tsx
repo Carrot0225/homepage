@@ -211,14 +211,6 @@ function WishStage({ wishes }: { wishes: Wish[] }) {
       >
         <div className="wb-canvas" ref={canvasRef}>
           <div className="wb-scene" role="list" aria-label="みんなの願い事">
-            <div className="wb-bamboo wb-bamboo--left" aria-hidden="true">
-              <span className="wb-leaf" /><span className="wb-leaf" /><span className="wb-leaf" />
-            </div>
-            <div className="wb-bamboo wb-bamboo--right" aria-hidden="true">
-              <span className="wb-leaf" /><span className="wb-leaf" /><span className="wb-leaf" />
-            </div>
-            <div className="wb-cord" aria-hidden="true" />
-
             <ul className="wb-hang">
               {wishes.map((w, i) => {
                 const ink = readableInk(w.color);
@@ -227,7 +219,6 @@ function WishStage({ wishes }: { wishes: Wish[] }) {
                   '--dur': `${3.4 + (i % 5) * 0.4}s`,
                   '--delay': `${-((i * 7) % 30) * 0.1}s`,
                   '--sway': `${2 + (i % 4)}deg`,
-                  '--thread': `${18 + (i % 3) * 14}px`,
                 } as React.CSSProperties;
                 return (
                   <li className="wb-item" style={style} role="listitem" key={w.id}>

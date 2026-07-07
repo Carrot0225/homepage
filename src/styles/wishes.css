@@ -172,7 +172,14 @@
 .wb-scene {
   position: relative;
   width: 720px;
-  padding: 3rem 92px 3.5rem;
+  padding: 2.5rem 34px 3rem;
+  border-radius: 14px;
+  background-color: rgba(243, 240, 229, 0.55);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg fill='%234f7a3a' fill-opacity='0.17'%3E%3Cpath d='M12,28 C30,20 54,23 70,28 C54,33 30,36 12,28 Z' transform='rotate(-18 41 28)'/%3E%3Cpath d='M84,12 C102,4 126,7 142,12 C126,17 102,20 84,12 Z' transform='rotate(13 113 12)'/%3E%3Cpath d='M100,66 C116,58 138,61 150,67 C138,73 116,76 100,66 Z' transform='rotate(-30 125 66)'/%3E%3Cpath d='M6,92 C24,84 48,87 64,92 C48,97 24,100 6,92 Z' transform='rotate(22 35 92)'/%3E%3Cpath d='M74,110 C92,102 116,105 132,110 C116,115 92,118 74,110 Z' transform='rotate(-10 103 110)'/%3E%3Cpath d='M30,128 C48,120 72,123 88,128 C72,133 48,136 30,128 Z' transform='rotate(36 59 128)'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(140% 95% at 50% 0%, rgba(90, 140, 70, 0.20), rgba(90, 140, 70, 0.05) 55%, rgba(90, 140, 70, 0) 82%);
+  background-size: 150px 150px, auto;
+  box-shadow: inset 0 0 0 1px rgba(90, 140, 70, 0.16), 0 12px 34px -20px rgba(60, 90, 45, 0.55);
 }
 
 /* --- 竹（左右の幹） --- */
@@ -232,7 +239,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.6rem 1.9rem;
+  align-content: flex-start;
+  /* 行ピッチ = 短冊246px(紐26+札220) + 行間44px = 290px */
+  gap: 44px 30px;
+  /* 各行の上端に横紐を通す（短冊が増えても全部が紐から下がる） */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(120, 90, 60, 0.5) 0, rgba(120, 90, 60, 0.5) 2px,
+    transparent 2px, transparent 290px
+  );
 }
 
 .wb-item {
@@ -255,9 +270,23 @@
 }
 
 .wb-thread {
+  position: relative;
   width: 1px;
-  height: var(--thread);
+  height: 26px;
   background: rgba(120, 90, 60, 0.6);
+}
+
+/* 紐に結ばれた結び目 */
+.wb-thread::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(120, 90, 60, 0.8);
 }
 
 /* --- 短冊 --- */

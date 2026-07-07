@@ -37,6 +37,10 @@ const isActive = (path: string) => currentPath === path || currentPath === path 
         <span class="nav-num">04</span>
         <span class="nav-label">ColorSing</span>
       </a>
+      <a href="/tanabata" class={`nav-link ${isActive('/tanabata') || isActive('/wishes') ? 'active' : ''}`}>
+        <span class="nav-num">05</span>
+        <span class="nav-label">Tanabata</span>
+      </a>
     </div>
   </div>
 

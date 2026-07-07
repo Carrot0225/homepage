@@ -1,0 +1,10 @@
+name = "homepage"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
+
+# 七夕・短冊の保存先（Cloudflare D1）
+# database_id は `npx wrangler d1 create tanabata-wishes` を実行して取得した値に置き換えてください。
+[[d1_databases]]
+binding = "DB"
+database_name = "tanabata-wishes"
+database_id = "d7e39743-e825-4b93-acef-8ea2882167b1"

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WishBamboo from '../components/WishBamboo.tsx';
+import '../styles/wishes.css';
+---
+
+<Layout
+  title="みんなの願い事 | きゃるのページ"
+  description="みんなが書いた七夕の短冊が笹に飾られて揺れています。あなたも願い事を書いてみよう。"
+>
+  <article class="wb-page">
+    <header class="wb-cover">
+      <div class="wb-meta">
+        <span class="wb-meta-num">№ 008</span>
+        <span class="wb-meta-rule"></span>
+        <span class="wb-meta-label">Everyone's Wishes</span>
+      </div>
+      <h1 class="wb-hero-title">
+        <span class="wb-en">Wishes on the Bamboo</span>
+        <span class="wb-ja">みんなの願い事</span>
+      </h1>
+      <p class="wb-hero-tagline">笹の葉さらさら、願いはそよぐ。</p>
+    </header>
+
+    <section class="wb-body">
+      <WishBamboo client:load />
+    </section>
+  </article>
+</Layout>

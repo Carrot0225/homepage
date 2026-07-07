@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TanzakuComposer from '../components/TanzakuComposer.tsx';
+import '../styles/tanabata.css';
+---
+
+<Layout
+  title="七夕の短冊 | きゃるのページ"
+  description="七夕のお願い事を短冊に書いて笹に飾ろう。好きな色を選んで願い事とお名前を記入できます。"
+>
+  <article class="tn-page">
+    <header class="tn-cover">
+      <div class="tn-meta">
+        <span class="tn-meta-num">№ 007</span>
+        <span class="tn-meta-rule"></span>
+        <span class="tn-meta-label">Tanabata Wishes</span>
+      </div>
+      <h1 class="tn-hero-title">
+        <span class="tn-en">Star Festival</span>
+        <span class="tn-ja">七夕の短冊</span>
+      </h1>
+      <p class="tn-hero-tagline">願いを込めて、笹に一枚。</p>
+    </header>
+
+    <section class="tn-body">
+      <TanzakuComposer client:load />
+      <p class="tn-seealso">
+        書いた短冊は<a href="/wishes">みんなの願い事</a>で揺れています。
+      </p>
+    </section>
+  </article>
+</Layout>

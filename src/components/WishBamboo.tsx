@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { toBlob } from 'html-to-image';
 import AutoFitText from './AutoFitText';
 
 interface Wish {
@@ -79,13 +80,14 @@ export default function WishBamboo() {
 function WishStage({ wishes }: { wishes: Wish[] }) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<HTMLDivElement>(null);
   const t = useRef({ scale: 1, x: 0, y: 0 });
-  const pointers = useRef(new Map<number, { x: number; y: number }>());
-  const pinch = useRef<{ dist: number; scale: number } | null>(null);
-  const pan = useRef<{ x: number; y: number } | null>(null);
+
+  const [sharing, setSharing] = useState(false);
+  const [shareMsg, setShareMsg] = useState('');
 
   const MIN = 0.15;
-  const MAX = 5;
+  const MAX = 6;
   const clamp = (s: number) => Math.min(MAX, Math.max(MIN, s));
 
   const apply = () => {
@@ -93,15 +95,14 @@ function WishStage({ wishes }: { wishes: Wish[] }) {
     if (c) c.style.transform = `translate(${t.current.x}px, ${t.current.y}px) scale(${t.current.scale})`;
   };
 
-  // ビューポート座標 (vx,vy) を中心に拡大縮小
-  const zoomAt = (vx: number, vy: number, next: number) => {
-    const cur = t.current;
-    const ns = clamp(next);
-    const px = (vx - cur.x) / cur.scale;
-    const py = (vy - cur.y) / cur.scale;
-    cur.x = vx - px * ns;
-    cur.y = vy - py * ns;
-    cur.scale = ns;
+  // ビューポート座標 (av,ay) を固定したまま倍率を newScale に
+  const zoomTo = (av: number, ay: number, newScale: number) => {
+    const ns = clamp(newScale);
+    const px = (av - t.current.x) / t.current.scale;
+    const py = (ay - t.current.y) / t.current.scale;
+    t.current.x = av - px * ns;
+    t.current.y = ay - py * ns;
+    t.current.scale = ns;
     apply();
   };
 
@@ -133,84 +134,140 @@ function WishStage({ wishes }: { wishes: Wish[] }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wishes.length]);
 
-  // ホイール／トラックパッドでズーム（passive:false で preventDefault）
+  // 指1本=移動 / 指2本=ピンチ拡大＋移動 を統一処理（window一括でポインタ取りこぼしに強い）
   useEffect(() => {
     const vp = viewportRef.current;
     if (!vp) return;
+    const pts = new Map<number, { x: number; y: number }>();
+    let base: { x: number; y: number; dist: number } | null = null;
+
+    const anchor = () => {
+      const a = [...pts.values()];
+      if (a.length === 0) return null;
+      if (a.length === 1) return { x: a[0].x, y: a[0].y, dist: 0 };
+      return {
+        x: (a[0].x + a[1].x) / 2,
+        y: (a[0].y + a[1].y) / 2,
+        dist: Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y),
+      };
+    };
+
+    const onMove = (e: PointerEvent) => {
+      if (!pts.has(e.pointerId)) return;
+      e.preventDefault();
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      const cur = anchor();
+      if (!cur) return;
+      if (!base) { base = cur; return; }
+      // 指（またはその中点）の移動ぶんだけ平行移動
+      t.current.x += cur.x - base.x;
+      t.current.y += cur.y - base.y;
+      // 2本指なら距離変化ぶんだけ中点中心に拡大縮小
+      if (cur.dist > 0 && base.dist > 0) {
+        const rect = vp.getBoundingClientRect();
+        zoomTo(cur.x - rect.left, cur.y - rect.top, t.current.scale * (cur.dist / base.dist));
+      } else {
+        apply();
+      }
+      base = cur;
+    };
+
+    const onUp = (e: PointerEvent) => {
+      pts.delete(e.pointerId);
+      base = anchor(); // 指の本数が変わったら基準を取り直す（モード切替の同期ズレ防止）
+      if (pts.size === 0) {
+        window.removeEventListener('pointermove', onMove);
+        window.removeEventListener('pointerup', onUp);
+        window.removeEventListener('pointercancel', onUp);
+      }
+    };
+
+    const onDown = (e: PointerEvent) => {
+      e.preventDefault();
+      if (pts.size === 0) {
+        window.addEventListener('pointermove', onMove, { passive: false });
+        window.addEventListener('pointerup', onUp);
+        window.addEventListener('pointercancel', onUp);
+      }
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      base = anchor();
+    };
+
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       const rect = vp.getBoundingClientRect();
-      const factor = Math.exp(-e.deltaY * 0.0016);
-      zoomAt(e.clientX - rect.left, e.clientY - rect.top, t.current.scale * factor);
+      zoomTo(e.clientX - rect.left, e.clientY - rect.top, t.current.scale * Math.exp(-e.deltaY * 0.0016));
     };
+
+    vp.addEventListener('pointerdown', onDown, { passive: false });
     vp.addEventListener('wheel', onWheel, { passive: false });
-    return () => vp.removeEventListener('wheel', onWheel);
+    return () => {
+      vp.removeEventListener('pointerdown', onDown);
+      vp.removeEventListener('wheel', onWheel);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const onPointerDown = (e: React.PointerEvent) => {
-    viewportRef.current?.setPointerCapture(e.pointerId);
-    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (pointers.current.size === 1) {
-      pan.current = { x: e.clientX, y: e.clientY };
-    } else if (pointers.current.size === 2) {
-      pan.current = null;
-      const p = [...pointers.current.values()];
-      pinch.current = { dist: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), scale: t.current.scale };
-    }
-  };
-
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!pointers.current.has(e.pointerId)) return;
-    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    const vp = viewportRef.current;
-    if (!vp) return;
-    const rect = vp.getBoundingClientRect();
-    if (pointers.current.size >= 2 && pinch.current) {
-      const p = [...pointers.current.values()];
-      const dist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
-      const midX = (p[0].x + p[1].x) / 2 - rect.left;
-      const midY = (p[0].y + p[1].y) / 2 - rect.top;
-      zoomAt(midX, midY, pinch.current.scale * (dist / pinch.current.dist));
-    } else if (pan.current) {
-      t.current.x += e.clientX - pan.current.x;
-      t.current.y += e.clientY - pan.current.y;
-      pan.current = { x: e.clientX, y: e.clientY };
-      apply();
-    }
-  };
-
-  const onPointerUp = (e: React.PointerEvent) => {
-    pointers.current.delete(e.pointerId);
-    viewportRef.current?.releasePointerCapture?.(e.pointerId);
-    if (pointers.current.size < 2) pinch.current = null;
-    if (pointers.current.size === 1) {
-      const p = [...pointers.current.values()][0];
-      pan.current = { x: p.x, y: p.y };
-    } else if (pointers.current.size === 0) {
-      pan.current = null;
-    }
-  };
 
   const btnZoom = (factor: number) => {
     const vp = viewportRef.current;
     if (!vp) return;
     const rect = vp.getBoundingClientRect();
-    zoomAt(rect.width / 2, rect.height / 2, t.current.scale * factor);
+    zoomTo(rect.width / 2, rect.height / 2, t.current.scale * factor);
+  };
+
+  // スクショを作ってXへシェア（スマホは画像付きネイティブ共有、非対応は保存＋投稿画面）
+  const share = async () => {
+    const node = sceneRef.current;
+    if (!node || sharing) return;
+    setSharing(true);
+    setShareMsg('画像を作成中…');
+    try {
+      const blob = await Promise.race([
+        toBlob(node, { pixelRatio: 2, skipFonts: true, backgroundColor: '#eef2e7' }),
+        new Promise<null>((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000)),
+      ]);
+      if (!blob) throw new Error('no blob');
+      const file = new File([blob], 'tanabata-wishes.png', { type: 'image/png' });
+      const text = 'みんなの七夕の願い事🎋✨ #七夕';
+      const url = 'https://homepage-bno.pages.dev/wishes';
+      const nav = navigator as Navigator & {
+        canShare?: (d?: unknown) => boolean;
+        share?: (d: unknown) => Promise<void>;
+      };
+
+      if (nav.canShare && nav.share && nav.canShare({ files: [file] })) {
+        await nav.share({ files: [file], text: `${text}\n${url}` });
+        setShareMsg('');
+      } else {
+        // フォールバック：画像を保存し、Xの投稿画面を開く
+        const dl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = dl;
+        a.download = 'tanabata-wishes.png';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(dl);
+        const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        window.open(intent, '_blank', 'noopener');
+        setShareMsg('画像を保存しました。開いたXの投稿画面で画像を添付してください。');
+      }
+    } catch (err) {
+      if ((err as Error)?.name === 'AbortError') setShareMsg('');
+      else setShareMsg('画像の作成に失敗しました。もう一度お試しください。');
+    } finally {
+      setSharing(false);
+    }
   };
 
   return (
     <div className="wb-stage">
-      <div
-        className="wb-viewport"
-        ref={viewportRef}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-      >
+      <div className="wb-viewport" ref={viewportRef}>
         <div className="wb-canvas" ref={canvasRef}>
-          <div className="wb-scene" role="list" aria-label="みんなの願い事">
+          <div className="wb-scene" ref={sceneRef} role="list" aria-label="みんなの願い事">
             <ul className="wb-hang">
               {wishes.map((w, i) => {
                 const ink = readableInk(w.color);
@@ -246,8 +303,15 @@ function WishStage({ wishes }: { wishes: Wish[] }) {
 
       <div className="wb-footer">
         <span className="wb-total">願い事 {wishes.length} 件</span>
+        <button className="wb-share" onClick={share} disabled={sharing}>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M18.9 1.6h3.5l-7.6 8.7L23.7 22h-7l-5.5-7.2L4.9 22H1.4l8.1-9.3L.9 1.6h7.2l5 6.6 5.8-6.6Zm-1.2 18.3h1.9L6.4 3.6H4.3l13.4 16.3Z" />
+          </svg>
+          {sharing ? '作成中…' : 'スクショをXにシェア'}
+        </button>
         <a className="wb-write-link" href="/tanabata">自分も短冊を書く</a>
       </div>
+      {shareMsg && <p className="wb-share-msg" role="status">{shareMsg}</p>}
     </div>
   );
 }

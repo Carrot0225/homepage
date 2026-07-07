@@ -427,6 +427,36 @@
   letter-spacing: 0.04em;
 }
 
+/* Xシェアボタン */
+.wb-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mincho);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  background: #111;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+}
+
+.wb-share:hover { transform: translateY(-2px); background: #000; }
+.wb-share:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.wb-share svg { display: block; }
+
+.wb-share-msg {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: var(--font-mincho);
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
 /* 動きを抑える設定を尊重 */
 @media (prefers-reduced-motion: reduce) {
   .wb-item { animation: none; }
